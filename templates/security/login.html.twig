@@ -1,8 +1,6 @@
 {# templates/login/index.html.twig #}
 {% extends 'base.html.twig' %}
 
-{# ... #}
-
 {% block body %}
 
 	<header>
@@ -13,28 +11,28 @@
 		<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 	{% endif %}
 
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4 mt-5 offset-md-4">
+	<div class="">
+		<div class="">
+			<div class="">
 				<form
 					action="{{ path('app_login') }}" method="post">
 
 					<!-- Email input -->
-					<div class="form-outline mb-4">
-						<label class="form-label" for="username">Email:</label>
-						<input class="form-control" type="email" id="username" name="_username" value="{{ last_username }}"/>
+					<div class="">
+						<label class="" for="username">Email:</label>
+						<input class="" type="email" id="username" name="_username" value="{{ last_username }}"/>
 					</div>
 
 					<!-- Password input -->
-					<div class="form-outline mb-4">
-						<label class="form-label" for="password">Hasło:</label>
-						<input type="password" id="password" name="_password" class="form-control"/>
+					<div class="">
+						<label class="" for="password">Hasło:</label>
+						<input type="password" id="password" name="_password" class=""/>
 					</div>
 
 					{# If you want to control the URL the user is redirected to on success
 																								<input type="hidden" name="_target_path" value="/account"/> #}
 
-					<button type="button" class="btn btn-primary btn-block mb-4">Zaloguj</button>
+					<button type="" class="">Zaloguj</button>
 				</form>
 			</div>
 

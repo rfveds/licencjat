@@ -1,6 +1,6 @@
 <?php
 /**
- * Product Controller.
+ * Comapny Controller.
  */
 
 namespace App\Controller;
@@ -10,26 +10,26 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Class ProductController.
+ * Class CompanyController.
  *
  * @Route("/")
  */
-class ProductController extends AbstractController
+class CompanyController extends AbstractController
 {
     /**
-     * Product page.
+     * Company page.
      *
      * @Route(
-     *     "/product",
-     *     name="product",
+     *     "/company",
+     *     name="company",
      * )
      *
      * @return \Symfony\Component\HttpFoundation\Response HTTP Response
      */
-    public function product_page(): Response
+    public function company_page(): Response
     {
         return $this->render(
-            'editor/product.html.twig',
+            'editor/company.html.twig',
         );
     }
 }
