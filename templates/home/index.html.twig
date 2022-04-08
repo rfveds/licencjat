@@ -1,12 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    Licencjat
+	Licencjat
 {% endblock %}
 
 {% block body %}
-    
-    <header id="main-page__header">
-    <h1>Aplikacja wspomagająca dobór kolorystki stron internetowych</h1>
-    </header>
+
+	<header id="main-page__header">
+		<h1>Aplikacja wspomagająca dobór kolorystki stron internetowych</h1>
+	</header>
+
+
+	{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+		<p>Email:
+			{{ app.user.email }}</p>
+	{% endif %}
+
 {% endblock %}

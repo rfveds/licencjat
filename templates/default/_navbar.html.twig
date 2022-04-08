@@ -2,3 +2,29 @@
     Navbar.
 #}
 
+<nav class="">
+	<a
+		href="{{ url('homepage') }}" class="">
+        Homepage
+	</a>
+	<div class="" >
+		<ul class="">
+			<li class="">
+				{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+					<a href="{{ url('app_logout') }}" class="" title="{{ 'action_logout' }}">
+						{{ 'action_logout' }}
+					</a>
+				{% else %}
+					<a href="{{ url('app_login') }}" class="" title="{{ 'action_login' }}">
+						{{ 'action_login' }}
+					</a>
+				</li>
+			</li>
+			<li>
+				<a href="{{ url('app_register') }}" class="" title="{{ 'action_login'}}">
+					{{ 'action_register' }}
+				</a>
+			{% endif %}
+		</li>
+	</ul>
+</div></nav>
