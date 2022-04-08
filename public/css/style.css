@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+#main-page__header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 15vh;
+
+    border: 1px solid red;
+}
