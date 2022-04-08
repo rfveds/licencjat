@@ -5,9 +5,6 @@
 
 <ul class="nav justify-content-start">
 	<li class="nav-item">
-		<a class="nav-link" href="{{ url('homepage') }}">Generator</a>
-	</li>
-	<li class="nav-item">
 		{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 			<a class="nav-link" href="{{ url('app_logout') }}" class="">
 				Wyloguj
