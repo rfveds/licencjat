@@ -8,6 +8,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -24,7 +25,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @UniqueEntity(fields={"email"})
  */
-class User implements UserInterface
+class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     /**
      * Role user.
@@ -132,16 +133,23 @@ class User implements UserInterface
     }
 
     /**
-     * A visual identifier that represents this user.
+     * The public representation of the user (e.g. a username, an email address, etc.)
      *
      * @see UserInterface
-     *
-     * @return string Username
+     */
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->email;
+    }
+
+   /**
+     * @deprecated since Symfony 5.3
      */
     public function getUsername(): string
     {
-        return  $this->email;
+        return (string) $this->email;
     }
+
 
     /**
      * Getter for the Roles.

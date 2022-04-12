@@ -8,7 +8,7 @@ namespace App\DataFixtures;
 use App\Entity\User;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 /**
  * Class UserFixtures.
@@ -18,14 +18,14 @@ class UserFixtures extends AbstractBaseFixtures implements DependentFixtureInter
     /**
      * Password encoder.
      */
-    private UserPasswordEncoderInterface $passwordEncoder;
+    private UserPasswordHasherInterface $passwordEncoder;
 
     /**
      * UserFixtures constructor.
      *
      * @param \Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface $passwordEncoder Password encoder
      */
-    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
+    public function __construct(UserPasswordHasherInterface $passwordEncoder)
     {
         $this->passwordEncoder = $passwordEncoder;
     }
@@ -45,7 +45,7 @@ class UserFixtures extends AbstractBaseFixtures implements DependentFixtureInter
                 $user->setEmail(sprintf('user%d@example.com', $i));
                 $user->setRoles([User::ROLE_USER]);
                 $user->setPassword(
-                    $this->passwordEncoder->encodePassword(
+                    $this->passwordEncoder->hashPassword(
                         $user,
                         'user1234'
                     )
@@ -64,7 +64,7 @@ class UserFixtures extends AbstractBaseFixtures implements DependentFixtureInter
                 $user->setEmail(sprintf('admin%d@example.com', $i));
                 $user->setRoles([User::ROLE_USER, User::ROLE_ADMIN]);
                 $user->setPassword(
-                    $this->passwordEncoder->encodePassword(
+                    $this->passwordEncoder->hashPassword(
                         $user,
                         'admin1234'
                     )
