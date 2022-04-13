@@ -7,8 +7,6 @@ namespace App\Service;
 
 use App\Entity\UsersData;
 use App\Repository\UsersDataRepository;
-use Knp\Component\Pager\Pagination\PaginationInterface;
-use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * Class UsersDataService.

@@ -34,7 +34,7 @@ class UsersDataType extends AbstractType
             'firstName',
             TextType::class,
             [
-                'label' => 'label_first_name',
+                'label' => 'Imię',
                 'required' => true,
                 'attr' => ['max_length' => 16],
             ]
@@ -43,7 +43,7 @@ class UsersDataType extends AbstractType
             'lastName',
             TextType::class,
             [
-                'label' => 'label_last_name',
+                'label' => 'Nazwisko',
                 'required' => true,
                 'attr' => ['max_length' => 32],
             ]

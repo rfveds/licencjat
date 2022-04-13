@@ -36,7 +36,7 @@ class RegistrationFormType extends AbstractType
             'email',
             EmailType::class,
             [
-                'label' => 'label_email',
+                'label' => 'Email',
                 'required' => true,
                 'constraints' => [
                     new NotBlank(),
@@ -54,15 +54,15 @@ class RegistrationFormType extends AbstractType
                         new Length(['min' => 6, 'max' => 191]),
                         new NotBlank(),
                     ] ,
-                    'first_options' => ['label' => 'label_password'],
-                    'second_options' => ['label' => 'label_confirm_password'],
+                    'first_options' => ['label' => 'Hasło'],
+                    'second_options' => ['label' => 'Potwierdź hasło'],
                 ],
             )
             ->add(
                 'firstName',
                 TextType::class,
                 [
-                    'label' => 'label_first_name',
+                    'label' => 'Imię',
                     'required' => true,
                     'constraints' => [
                         new Length(['min' => 3, 'max' => 16]),
@@ -78,7 +78,7 @@ class RegistrationFormType extends AbstractType
                 'lastName',
                 TextType::class,
                 [
-                    'label' => 'label_last_name',
+                    'label' => 'Nazwisko',
                     'required' => true,
                     'constraints' => [
                         new Length(['min' => 3, 'max' => 32]),
