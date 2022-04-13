@@ -4,19 +4,31 @@
 
 <ul class="nav justify-content-start">
 	<li class="nav-item">
+		<a href="{{ url('homepage') }}" class="navbar-brand">
+			{{ 'title_app'|trans }}
+		</a>
+	</li>
+	<li class="nav-item">
 		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 			<a class="nav-link" href="{{ url('app_logout') }}" class="">
-				Wyloguj
+				{{ 'action_logout'|trans }}
 			</a>
 		{% else %}
 			<a class="nav-link" href="{{ url('app_login') }}" class="">
-				Zaloguj
+				{{ 'action_login'|trans }}
 			</a>
 		</li>
 	</li>
 	<li class="nav-item">
 		<a class="nav-link" href="{{ url('app_register') }}" class="">
-			Zarejestruj
+			{{ 'action_register'|trans }}
 		</a>
+	{% endif %}
+	{% if is_granted('ROLE_USER') %}
+		<li class="nav-item">
+			<a href="{{url('user_show') }}" class="nav-link" title="{{ 'user_account'|trans }}">
+				{{ 'user_account'|trans }}
+			</a>
+		</li>
 	{% endif %}
 </li></ul>

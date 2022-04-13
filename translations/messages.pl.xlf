@@ -374,6 +374,10 @@
                 <source>message_email_already_exists</source>
                 <target>Email jest już zajęty</target>
             </trans-unit>
+            <trans-unit id="title_app">
+                <source>title_app</source>
+                <target>Strona Główna</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
