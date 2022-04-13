@@ -49,17 +49,10 @@ class GeneratorController extends AbstractController
      */
     public function generator(Request $request): Response
     {
-        $input =
-            [
-                'radość',
-                'wyobrźnia',
-                'optymizm',
-                'ciekawość'
-            ];
 
-        $prefix = '0x';
         $color1 = $request->query->get('color1');
         $color2 = $request->query->get('color2');
+
 
         $color1 = substr($color1, 1);
 
@@ -92,9 +85,20 @@ class GeneratorController extends AbstractController
             echo '<br>';
         }
 
-        $color = $this->generatorService->check_color($input)['color'];
+        $colors = $request->query->get('colors');
+
+        echo '<br>';
+        print_r($colors);
+
+        echo '<br>';
 
 
+        $input = $colors;
+
+        $result = $this->generatorService->check_color($input)['color'];
+
+        echo $result;
+        echo '<br>';
 
 
         return $this->render(

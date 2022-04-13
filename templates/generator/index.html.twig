@@ -11,11 +11,32 @@
 
 	<form action="{{ url('generator') }}" method="get">
 		<input type="color" name="color1">
-		<input type="color" name="color2">	
+		<input type="color" name="color2">
 		<input type="submit">
 	</form>
 
-	{# {{ color }} #}
 
+	<form action="{{ url('generator') }}" method="get">
+		<label for="radość">radość</label>
+		<input type="checkbox" id="radość" name="colors[]" value="radość">
+
+		<label for="wyobraźnia">wyobraźnia</label>
+		<input type="checkbox" id="wyobraźnia" name="colors[]" value="wyobraźnia">
+
+		<label for="optymizm">optymizm</label>
+		<input type="checkbox" id="optymizm" name="colors[]" value="optymizm">
+
+		<label for="ciekawość">ciekawość</label>
+		<input type="checkbox" id="ciekawość" name="colors[]" value="ciekawość">
+
+
+		<label for="energia">energia</label>
+		<input type="checkbox" id="energia" name="colors[]" value="energia">
+
+		<label for="ekscytacja">ekscytacja</label>
+		<input type="checkbox" id="ekscytacja" name="colors[]" value="ekscytacja">
+
+		<input type="submit">
+	</form>
 
 {% endblock %}
