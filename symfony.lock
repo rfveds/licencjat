@@ -2,6 +2,9 @@
     "composer/package-versions-deprecated": {
         "version": "1.11.99.5"
     },
+    "davidgorges/color-contrast": {
+        "version": "v1.0.0"
+    },
     "doctrine/annotations": {
         "version": "1.13",
         "recipe": {
@@ -103,6 +106,9 @@
     },
     "laminas/laminas-code": {
         "version": "4.5.1"
+    },
+    "mischiefcollective/colorjizz": {
+        "version": "1.0.0"
     },
     "nikic/php-parser": {
         "version": "v4.13.2"
