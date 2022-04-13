@@ -1,14 +1,16 @@
-{% extends 'base.html.twig' %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
 
 {% block body %}
-<div class="wrapper">
-	<div class="settings">
-		<ul class="">
-			<li class="">
-				<a class="" href="{{ url('homepage') }}">Generator</a>
-			</li>
-		</ul>
+	<div class="wrapper">
+		<div class="settings">
+			<ul class="">
+				<li class="">
+					<a class="" href="{{ url('homepage') }}">Generator</a>
+				</li>
+			</ul>
+		</div>
+		<div class="main-content"></div>
 	</div>
-	<div class="main-content"></div>
-</div>
 {% endblock %}
