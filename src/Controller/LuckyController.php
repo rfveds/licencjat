@@ -16,7 +16,7 @@ class LuckyController extends AbstractController
 {
     /**
      * @Route(
-     *  "/lucky"
+     *  "/lucky",
      *  name="lucky")
      */
     public function test(Request $request)
