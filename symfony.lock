@@ -107,6 +107,9 @@
     "laminas/laminas-code": {
         "version": "4.5.1"
     },
+    "mikealmond/color": {
+        "version": "v0.1.5"
+    },
     "mischiefcollective/colorjizz": {
         "version": "1.0.0"
     },
