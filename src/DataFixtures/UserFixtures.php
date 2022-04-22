@@ -38,7 +38,7 @@ class UserFixtures extends AbstractBaseFixtures implements DependentFixtureInter
     public function loadData(ObjectManager $manager): void
     {
         $this->createMany(
-            10,
+            1,
             'users',
             function ($i) {
                 $user = new User();
@@ -57,7 +57,7 @@ class UserFixtures extends AbstractBaseFixtures implements DependentFixtureInter
         );
 
         $this->createMany(
-            3,
+            1,
             'admins',
             function ($i) {
                 $user = new User();

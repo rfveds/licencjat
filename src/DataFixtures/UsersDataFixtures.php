@@ -21,7 +21,7 @@ class UsersDataFixtures extends AbstractBaseFixtures
     public function loadData(ObjectManager $manager): void
     {
         $this->createMany(
-            13,
+            2,
             'user_data',
             function ($i) {
                 $usersData = new UsersData();

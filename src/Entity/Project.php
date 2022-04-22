@@ -167,16 +167,25 @@ class Project
     //     $this->tags->removeProject($tag);
     // }
 
+    /**
+     * Getter for Category.
+     * 
+     *@return Category|null Code
+     */
     public function getCategory(): ?Category
     {
         return $this->category;
     }
 
+    /**
+     * Setter for Category.
+     *
+     * @param Category $category Category
+     */
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
 
         return $this;
     }
-
 }

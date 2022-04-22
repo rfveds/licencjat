@@ -55,17 +55,31 @@ class Tag
         $this->projects = new ArrayCollection();
     }
 
-
+    /**
+     * Getter for Id.
+     *
+     * @return int|null Result
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * Getter for Name.
+     *
+     * @return string|null Name
+     */
     public function getName(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * Setter for Name.
+     *
+     * @param string $name Name
+     */
     public function setName(string $name): self
     {
         $this->name = $name;
@@ -73,11 +87,21 @@ class Tag
         return $this;
     }
 
+    /**
+     * Getter for Color.
+     *
+     * @return Color|null Color
+     */
     public function getColor(): ?Color
     {
         return $this->color;
     }
 
+    /**
+     * Setter for Color.
+     *
+     * @param Color $color Color
+     */
     public function setColor(?Color $color): self
     {
         $this->color = $color;
