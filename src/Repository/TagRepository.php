@@ -1,7 +1,4 @@
 <?php
-/**
- * Tag repository.
- */
 
 namespace App\Repository;
 
@@ -9,12 +6,9 @@ use App\Entity\Tag;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
-use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- *  Class TagRepository.
- *
  * @method Tag|null find($id, $lockMode = null, $lockVersion = null)
  * @method Tag|null findOneBy(array $criteria, array $orderBy = null)
  * @method Tag[]    findAll()
@@ -22,65 +16,61 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class TagRepository extends ServiceEntityRepository
 {
-
-    /**
-     * TagRepository constructor.
-     *
-     * @param \Doctrine\Persistence\ManagerRegistry $registry
-     */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Tag::class);
     }
 
     /**
-     * Save record.
-     *
-     * @param Tag $tag Tag entity
-     *
-     * @throws ORMException
-     */
-    public function save(Tag $tag): void
-    {
-        $this->_em->persist($tag);
-        $this->_em->flush();
-    }
-
-    /**
-     * Delete record.
-     *
-     * @param Tag $tag Category entity
-     *
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function delete(Tag $tag): void
+    public function add(Tag $entity, bool $flush = true): void
     {
-        $this->_em->remove($tag);
-        $this->_em->flush();
+        $this->_em->persist($entity);
+        if ($flush) {
+            $this->_em->flush();
+        }
     }
 
     /**
-     * Query all records.
-     *
-     * @return QueryBuilder Query builder
+     * @throws ORMException
+     * @throws OptimisticLockException
      */
-    public function queryAll(): QueryBuilder
+    public function remove(Tag $entity, bool $flush = true): void
     {
-        return $this->getOrCreateQueryBuilder()
-            ->select(
-                'partial tag.{id, title, code}'
-            )
-            ->orderBy('tag.id', 'ASC');
+        $this->_em->remove($entity);
+        if ($flush) {
+            $this->_em->flush();
+        }
     }
 
-    /**
-     * Get or create new query builder.
-     *
-     * @return QueryBuilder Query builder
-     */
-    private function getOrCreateQueryBuilder(): QueryBuilder
+    // /**
+    //  * @return Tag[] Returns an array of Tag objects
+    //  */
+    /*
+    public function findByExampleField($value)
     {
-        return null ?? $this->createQueryBuilder('tag');
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.exampleField = :val')
+            ->setParameter('val', $value)
+            ->orderBy('t.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+        ;
     }
+    */
+
+    /*
+    public function findOneBySomeField($value): ?Tag
+    {
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.exampleField = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+    */
 }

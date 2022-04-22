@@ -11,7 +11,6 @@ use App\Entity\Project;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
-use App\Form\DataTransformer\TagsDataTransformer;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 
@@ -21,21 +20,6 @@ use Symfony\Component\Form\Extension\Core\Type\HiddenType;
  */
 class ProjectType extends AbstractType
 {
-    /**
-     * Tags data transformer.
-     */
-    private TagsDataTransformer $tagsDataTransformer;
-
-    /**
-     * ProjectType constructor.
-     *
-     * @param \App\Form\DataTransformer\TagsDataTransformer $tagsDataTransformer Tags data transformer
-     */
-    public function __construct(TagsDataTransformer $tagsDataTransformer)
-    {
-        $this->tagsDataTransformer = $tagsDataTransformer;
-    }
-
     /**
      * Builds the form.
      *

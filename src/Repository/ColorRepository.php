@@ -45,9 +45,9 @@ class ColorRepository extends ServiceEntityRepository
         }
     }
 
-    // /**
-    //  * @return Color[] Returns an array of Color objects
-    //  */
+    /**
+    * @return Color[] Returns an array of Color objects
+    */
     /*
     public function findByExampleField($value)
     {
@@ -62,15 +62,17 @@ class ColorRepository extends ServiceEntityRepository
     }
     */
 
-    /*
-    public function findOneBySomeField($value): ?Color
+    /**
+     * @return Color Return color name by id
+     */
+    public function findOneByName($value): ?Color
     {
         return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
+            ->andWhere('c.name = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
-    */
+    
 }
