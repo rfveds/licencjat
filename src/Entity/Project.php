@@ -7,6 +7,8 @@
 namespace App\Entity;
 
 use App\Repository\ProjectRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -50,15 +52,32 @@ class Project
      *
      * @ORM\Column(
      *     type="string",
+     *     nullable=true,
      * )
      */
     private string $code;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Color::class)
+     * Tag.
+     *
+     * @ORM\ManyToMany(
+     *     targetEntity=Tag::class,
+     *     inversedBy="projects"
+     * )
+     *
+     * @ORM\JoinTable(
+     *     name="projects_tags"
+     * )
      */
-    private $color;
+    private $tags;
 
+    /**
+     * Project constructor.
+     */
+    public function __construct()
+    {
+        $this->tags = new ArrayCollection();
+    }
 
     /**
      * Getter for Id.
@@ -110,16 +129,35 @@ class Project
         $this->code = $code;
     }
 
-    public function getColor(): ?Color
+    /**
+     * Tags.
+     *
+     * @return Collection|Tag[]
+     */
+    public function getTags(): Collection
     {
-        return $this->color;
+        return $this->tags;
     }
 
-    public function setColor(?Color $color): self
+    /**
+     * Add tag.
+     *
+     * @param Tag $tag Tag
+     */
+    public function addTag(Tag $tag): void
     {
-        $this->color = $color;
-
-        return $this;
+        if (!$this->tags->contains($tag)) {
+            $this->tags[] = $tag;
+        }
     }
 
+    /**
+     * Remove tag.
+     *
+     * @param Tag $tag Tag
+     */
+    public function removeTag(Tag $tag): void
+    {
+        $this->tags->removeElement($tag);
+    }
 }

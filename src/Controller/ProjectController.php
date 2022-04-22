@@ -6,9 +6,9 @@
 namespace App\Controller;
 
 use App\Entity\Project;
-use App\Form\ProjectType;
 use App\Service\ProjectService;
 use Doctrine\ORM\ORMException;
+use App\Form\ProjectType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
@@ -57,6 +57,8 @@ class ProjectController extends AbstractController
             'project/index.html.twig',
         );
     }
+
+
 
     /**
      * Create action.

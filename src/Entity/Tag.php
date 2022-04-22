@@ -3,6 +3,9 @@
 namespace App\Entity;
 
 use App\Repository\TagRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -33,6 +36,26 @@ class Tag
      */
     private $color;
 
+
+    /**
+     * Projects.
+     *
+     * @ORM\ManyToMany(
+     *     targetEntity=Project::class,
+     *     mappedBy="tags"
+     * )
+     */
+    private $projects;
+
+    /**
+     * Tag constructor.
+     */
+    public function __construct()
+    {
+        $this->projects = new ArrayCollection();
+    }
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,5 +83,40 @@ class Tag
         $this->color = $color;
 
         return $this;
+    }
+
+    /**
+     * Getter for projects.
+     *
+     * @return Collection|Project[]
+     */
+    public function getProjects(): Collection
+    {
+        return $this->projects;
+    }
+
+    /**
+     * Add Project.
+     *
+     * @param \App\Entity\Project $project Project
+     */
+    public function addProject(Project $project): void
+    {
+        if (!$this->projects->contains($project)) {
+            $this->projects[] = $project;
+            $project->addTag($this);
+        }
+    }
+
+    /**
+     * Remove Project.
+     *
+     * @param \App\Entity\Project $project Project
+     */
+    public function removeProject(Project $project): void
+    {
+        if ($this->projects->removeElement($project)) {
+            $project->removeTag($this);
+        }
     }
 }

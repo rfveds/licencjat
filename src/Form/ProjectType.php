@@ -8,11 +8,16 @@ namespace App\Form;
 
 
 use App\Entity\Project;
+use App\Entity\Tag;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use App\Form\DataTransformer\TagsDataTransformer;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
+
 
 
 /**
@@ -20,6 +25,20 @@ use Symfony\Component\Form\Extension\Core\Type\HiddenType;
  */
 class ProjectType extends AbstractType
 {
+    /**
+     * Tags data transformer.
+     */
+    private TagsDataTransformer $tagsDataTransformer;
+
+    /**
+     * ElementType constructor.
+     *
+     * @param \App\Form\DataTransformer\TagsDataTransformer $tagsDataTransformer Tags data transformer
+     */
+    public function __construct(TagsDataTransformer $tagsDataTransformer)
+    {
+        $this->tagsDataTransformer = $tagsDataTransformer;
+    }
     /**
      * Builds the form.
      *
@@ -43,18 +62,22 @@ class ProjectType extends AbstractType
             ]
         );
         $builder->add(
-            'code',
-            HiddenType::class
-        );
-        $builder->add(
             'tags',
-            TextType::class,
+            EntityType::class,
             [
-                'label' => 'label_tags',
-                'required' => false,
-                'attr' => ['max_length' => 16],
-            ]
+                    'class' => Tag::class,
+                    'choice_label' => function ($tags) {
+                        return $tags->getName();
+                    },
+                    'label' => 'label_tags',
+                    'placeholder' => 'label_none',
+                    'required' => true,
+                    'expanded' => true,
+                    'multiple' => true,
+                ]
         );
+        
+ 
     }
 
     /**
