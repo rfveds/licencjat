@@ -9,14 +9,18 @@
 	</a>
 
 
-	<form action="{{ url('generator') }}" method="get">
-		<input type="color" name="color1">
-		<input type="color" name="color2">
-		<input type="submit">
-	</form>
+	{# <form action="{{ url('generator') }}" method="get">
+			<input type="color" name="color1">
+			<input type="color" name="color2">
+			<input type="submit">
+		</form> #}
 
 
-	<form action="{{ url('generator') }}" method="get">
+	<form
+		action="{{ url('generator') }}" method="get">
+
+
+		{# yellow #}
 		<label for="radość">radość</label>
 		<input type="checkbox" id="radość" name="colors[]" value="radość">
 
@@ -27,14 +31,35 @@
 		<input type="checkbox" id="optymizm" name="colors[]" value="optymizm">
 
 		<label for="ciekawość">ciekawość</label>
-		<input type="checkbox" id="ciekawość" name="colors[]" value="ciekawość">
+		<input
+		type="checkbox" id="ciekawość" name="colors[]" value="ciekawość">
 
-
+		{# red #}
 		<label for="energia">energia</label>
 		<input type="checkbox" id="energia" name="colors[]" value="energia">
 
 		<label for="ekscytacja">ekscytacja</label>
 		<input type="checkbox" id="ekscytacja" name="colors[]" value="ekscytacja">
+
+		<label for="piękno">piękno</label>
+		<input type="checkbox" id="piękno" name="colors[]" value="piękno">
+
+		<label for="dominacja">dominacja</label>
+		<input type="checkbox" id="dominacja" name="colors[]" value="dominacja">
+
+		{# blue #}
+		<label for="technologia">technologia</label>
+		<input type="checkbox" id="technologia" name="colors[]" value="technologia">
+
+		<label for="kompetencje">kompetencje</label>
+		<input type="checkbox" id="kompetencje" name="colors[]" value="kompetencje">
+
+		<label for="spokój">spokój</label>
+		<input type="checkbox" id="spokój" name="colors[]" value="spokój">
+
+		<label for="lojalność">lojalność</label>
+		<input type="checkbox" id="lojalność" name="colors[]" value="lojalność">
+
 
 		<input type="submit">
 	</form>

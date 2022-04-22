@@ -22,6 +22,8 @@ class LuckyController extends AbstractController
     public function test(Request $request)
     {
 
+        
+
         $baseColor = Color::fromHex($request->query->get('color') ?? '0049B7');
         $generator = new PaletteGenerator($baseColor);
         $distance  = 30;
