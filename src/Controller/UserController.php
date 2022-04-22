@@ -78,7 +78,7 @@ class UserController extends AbstractController
      *
      * @Route(
      *     "/{id}/edit",
-     *     methods={"GET", "PUT"},
+     *     methods={"GET", "PUT", "POST"},
      *     requirements={"id": "[1-9]\d*"},
      *     name="user_edit",
      * )
@@ -119,7 +119,7 @@ class UserController extends AbstractController
      *
      * @Route(
      *     "/{id}/edit_email",
-     *     methods={"GET", "PUT"},
+     *     methods={"GET", "PUT", "POST"},
      *     requirements={"id": "[1-9]\d*"},
      *     name="user_edit_email",
      * )

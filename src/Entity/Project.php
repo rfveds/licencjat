@@ -72,6 +72,12 @@ class Project
     private $tags;
 
     /**
+     * @ORM\ManyToOne(targetEntity=Category::class)
+     */
+    private $category;
+
+
+    /**
      * Project constructor.
      */
     public function __construct()
@@ -151,13 +157,26 @@ class Project
         }
     }
 
-    /**
-     * Remove tag.
-     *
-     * @param Tag $tag Tag
-     */
-    public function removeTag(Tag $tag): void
+    // /**
+    //  * Remove tag.
+    //  *
+    //  * @param Tag $tag Tag
+    //  */
+    // public function removeTag(Tag $tag): void
+    // {
+    //     $this->tags->removeProject($tag);
+    // }
+
+    public function getCategory(): ?Category
     {
-        $this->tags->removeElement($tag);
+        return $this->category;
     }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
 }

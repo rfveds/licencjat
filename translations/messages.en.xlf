@@ -226,9 +226,9 @@
                 <source>label_authors</source>
                 <target>Authors</target>
             </trans-unit>
-            <trans-unit id="label_elements">
-                <source>label_elements</source>
-                <target>Elements</target>
+            <trans-unit id="label_projects">
+                <source>label_projects</source>
+                <target>Projects</target>
             </trans-unit>
             <trans-unit id="title_tag_details">
                 <source>title_tag_details</source>
@@ -290,9 +290,9 @@
                 <source>message_out_of_stock</source>
                 <target>Element out of stock!</target>
             </trans-unit>
-            <trans-unit id="message_category_contains_elements">
-                <source>message_category_contains_elements</source>
-                <target>Category contains elements!</target>
+            <trans-unit id="message_category_contains_projects">
+                <source>message_category_contains_projects</source>
+                <target>Category contains projects!</target>
             </trans-unit>
             <trans-unit id="message_returned_successfully">
                 <source>message_returned_successfully</source>
@@ -346,9 +346,9 @@
                 <source>title_author_edit</source>
                 <target>Edit author</target>
             </trans-unit>
-            <trans-unit id="message_tag_contains_elements">
-                <source>message_tag_contains_elements</source>
-                <target>Tag contains elements</target>
+            <trans-unit id="message_tag_contains_projects">
+                <source>message_tag_contains_projects</source>
+                <target>Tag contains projects</target>
             </trans-unit>
             <trans-unit id="title_user">
                 <source>title_user</source>

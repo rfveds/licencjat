@@ -31,7 +31,7 @@ class Tag
      *  inversedBy="tags"
      * )
      * @ORM\JoinColumn(
-     *  nullable=false
+     *  nullable=true
      * )
      */
     private $color;
@@ -108,15 +108,15 @@ class Tag
         }
     }
 
-    /**
-     * Remove Project.
-     *
-     * @param \App\Entity\Project $project Project
-     */
-    public function removeProject(Project $project): void
-    {
-        if ($this->projects->removeElement($project)) {
-            $project->removeTag($this);
-        }
-    }
+    // /**
+    //  * Remove Project.
+    //  *
+    //  * @param \App\Entity\Project $project Project
+    //  */
+    // public function removeProject(Project $project): void
+    // {
+    //     if ($this->projects->removeProject($project)) {
+    //         $project->removeTag($this);
+    //     }
+    // }
 }

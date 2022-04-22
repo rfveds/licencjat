@@ -9,6 +9,7 @@ namespace App\Form;
 
 use App\Entity\Project;
 use App\Entity\Tag;
+use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -60,6 +61,19 @@ class ProjectType extends AbstractType
                 'required' => true,
                 'attr' => ['max_length' => 16],
             ]
+        );
+        $builder->add(
+            'category',
+            EntityType::class,
+            [
+                    'class' => Category::class,
+                    'choice_label' => function ($category) {
+                        return $category->getTitle();
+                    },
+                    'label' => 'label_category',
+                    'placeholder' => 'label_none',
+                    'required' => true,
+                ]
         );
         $builder->add(
             'tags',
