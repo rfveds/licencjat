@@ -71,9 +71,6 @@ class ProjectType extends AbstractType
                 'attr' => ['max_length' => 16],
             ]
         );
-        $builder->get('tags')->addModelTransformer(
-            $this->tagsDataTransformer
-        );
     }
 
     /**

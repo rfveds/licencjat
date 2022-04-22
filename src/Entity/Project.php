@@ -54,6 +54,11 @@ class Project
      */
     private string $code;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Color::class)
+     */
+    private $color;
+
 
     /**
      * Getter for Id.
@@ -103,6 +108,18 @@ class Project
     public function setCode(string $code): void
     {
         $this->code = $code;
+    }
+
+    public function getColor(): ?Color
+    {
+        return $this->color;
+    }
+
+    public function setColor(?Color $color): self
+    {
+        $this->color = $color;
+
+        return $this;
     }
 
 }

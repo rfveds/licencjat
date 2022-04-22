@@ -25,8 +25,8 @@ class UsersDataFixtures extends AbstractBaseFixtures
             'user_data',
             function ($i) {
                 $usersData = new UsersData();
-                $usersData->setFirstName($this->faker->firstName);
-                $usersData->setLastName($this->faker->lastName);
+                $usersData->setFirstName($this->faker->firstName());
+                $usersData->setLastName($this->faker->lastName());
 
                 return $usersData;
             }
