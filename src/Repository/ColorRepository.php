@@ -22,6 +22,10 @@ class ColorRepository extends ServiceEntityRepository
     }
 
     /**
+     * Save record.
+     *
+     * @param Color $color Color entity
+     * 
      * @throws ORMException
      * @throws OptimisticLockException
      */
@@ -34,6 +38,10 @@ class ColorRepository extends ServiceEntityRepository
     }
 
     /**
+     * Delete record.
+     * 
+     * @param Color $color Color entity
+     * 
      * @throws ORMException
      * @throws OptimisticLockException
      */
@@ -44,35 +52,4 @@ class ColorRepository extends ServiceEntityRepository
             $this->_em->flush();
         }
     }
-
-    /**
-    * @return Color[] Returns an array of Color objects
-    */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /**
-     * @return Color Return color name by id
-     */
-    public function findOneByName($value): ?Color
-    {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.name = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    
 }

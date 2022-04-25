@@ -1,10 +1,50 @@
-{% extends 'editor/index.html.twig' %}
-
 {% block stylesheets %}
 	<link rel="stylesheet" href="{{ asset('css/editor.css') }}"></link>
 	<link rel="stylesheet" href="{{ asset('css/product.css') }}"></link>
 {% endblock %}
 
-{% block title %}
-    Produkt
+{% block body %}
+	<style>
+		.square {
+            height: 300px;
+            width: 300px;
+            position: absolute;
+            top: 250px;
+			left: 270px;
+            z-index: 1;
+        }
+        .circle {
+	        border-radius: 50%;
+            height: 400px;
+	        width: 400px;
+            position: absolute;
+            top: 200px;
+            left: 650px;
+			z-index: 0;
+        }
+		.square {
+            background-color: #{{ project.color0 }}
+            }
+        .circle
+             {
+            background-color: #{{ project.color1 }}
+            }
+	</style>
+	<div class="wrapper">
+		<div class="settings">
+			<ul class="">
+				<li class="">
+					<a class="" href="{{ url('homepage') }}">Generator</a>
+				</li>
+			</ul>
+		</div>
+		<div class="main-content">
+			<div class="graphic">
+                <div class="square">
+                </div>
+                <div class="circle">
+                </div>
+            </div>
+		</div>
+	</div>
 {% endblock %}

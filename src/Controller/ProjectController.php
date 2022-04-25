@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Project controller.
  */
@@ -121,10 +122,20 @@ class ProjectController extends AbstractController
      */
     public function show(Project $project): Response
     {
-        return $this->render(
-            'project/show.html.twig',
-            ['project' => $project]
-        );
+        if ($project->getCategory()->getTitle() == 'product') {
+
+            return $this->render(
+                'editor/product.html.twig',
+                ['project' => $project]
+            );
+        }
+        if ($project->getCategory()->getTitle() == 'company') {
+
+            return $this->render(
+                'editor/company.html.twig',
+                ['project' => $project]
+            );
+        }
     }
 
     /**

@@ -8,6 +8,11 @@
 			{{ 'title_app'|trans }}
 		</a>
 	</li>
+		<li class="nav-item">
+		<a href="{{ url('project_index') }}" class="navbar-brand">
+			{{ 'title_project_list'|trans }}
+		</a>
+	</li>
 	<li class="nav-item">
 		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 			<a class="nav-link" href="{{ url('app_logout') }}" class="">

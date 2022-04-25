@@ -1,10 +1,19 @@
-{% extends 'editor/index.html.twig' %}
-
 {% block stylesheets %}
 	<link rel="stylesheet" href="{{ asset('css/editor.css') }}"></link>
 	<link rel="stylesheet" href="{{ asset('css/company.css') }}"></link>
 {% endblock %}
 
-{% block title %}
-    Firma
+{% block body %}
+	<div class="wrapper">
+		<div class="settings">
+			<ul class="">
+				<li class="">
+					<a class="" href="{{ url('homepage') }}">Generator</a>
+				</li>
+			</ul>
+		</div>
+		<div class="main-content">
+					{{ project.category.title }}
+		</div>
+	</div>
 {% endblock %}

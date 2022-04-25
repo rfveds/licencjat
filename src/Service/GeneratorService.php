@@ -86,16 +86,16 @@ class GeneratorService
         );
 
         //tablica z wartosciami kolorow
-        $data[] = array('color' => 'red',      'value' => 0);
-        $data[] = array('color' => 'yellow',   'value' => 0);
-        $data[] = array('color' => 'blue',     'value' => 0);
-        $data[] = array('color' => 'green',    'value' => 0);
-        $data[] = array('color' => 'purple',   'value' => 0);
-        $data[] = array('color' => 'orange',   'value' => 0);
-        $data[] = array('color' => 'brown',    'value' => 0);
-        $data[] = array('color' => 'black',    'value' => 0);
-        $data[] = array('color' => 'white',    'value' => 0);
-        $data[] = array('color' => 'grey',     'value' => 0);
+        $data[] = array('color' => 'red',      'value' => 0, 'hex' => '123abc');
+        $data[] = array('color' => 'yellow',   'value' => 0, 'hex' => '123abc');
+        $data[] = array('color' => 'blue',     'value' => 0, 'hex' => '123abc');
+        $data[] = array('color' => 'green',    'value' => 0, 'hex' => '123abc');
+        $data[] = array('color' => 'purple',   'value' => 0, 'hex' => '123abc');
+        $data[] = array('color' => 'orange',   'value' => 0, 'hex' => '123abc');
+        $data[] = array('color' => 'brown',    'value' => 0, 'hex' => '123abc');
+        $data[] = array('color' => 'black',    'value' => 0, 'hex' => '123abc');
+        $data[] = array('color' => 'white',    'value' => 0, 'hex' => '123abc');
+        $data[] = array('color' => 'grey',     'value' => 0, 'hex' => '123abc');
 
 
         // sprawdzenie z jakim kolroem powiązane są słowa
@@ -178,7 +178,7 @@ class GeneratorService
 
         for ($i = 0; $i < sizeof($data); $i++) {
             if ($data[$i]['value'] > $max) {
-                $result = $data[$i];
+                $result = $data[$i]['hex'];
                 $max = $data[$i]['value'];
             }
         }

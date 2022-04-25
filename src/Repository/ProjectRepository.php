@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Project repository.
  */
@@ -58,20 +59,6 @@ class ProjectRepository extends ServiceEntityRepository
     {
         $this->_em->remove($project);
         $this->_em->flush();
-    }
-
-    /**
-     * Query all records.
-     * 
-     * @return QueryBuilder Query builder
-     */
-    public function queryAll(): QueryBuilder
-    {
-        $queryBuilder = $this->getOrCreateQueryBuilder()
-            ->select('p')
-            ->from('Project', 'p');
-
-        return $this->$queryBuilder;
     }
 
     /**

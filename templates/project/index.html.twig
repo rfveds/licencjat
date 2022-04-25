@@ -1,7 +1,15 @@
-{% for project in projects %}
-	{{project.title}}
-	<a href="{{ url('project_show', {id: project.id}) }}" title="{{ 'action_view'|trans }}">
-		{{ 'action_view'|trans }}
-	</a>
-	<br>
-{% endfor %}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'title_home'|trans }}
+{% endblock %}
+
+{% block body %}
+	{% for project in projects %}
+		{{ project.title }}
+		<a href="{{ url('project_show', {id: project.id}) }}" title="{{ 'action_view'|trans }}">
+			{{ 'action_view'|trans }}
+		</a>
+		<br>
+	{% endfor %}
+{% endblock %}

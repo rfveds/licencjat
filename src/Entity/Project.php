@@ -48,16 +48,6 @@ class Project
     private string $title;
 
     /**
-     * Code.
-     *
-     * @ORM\Column(
-     *     type="string",
-     *     nullable=true,
-     * )
-     */
-    private string $code;
-
-    /**
      * Tag.
      *
      * @ORM\ManyToMany(
@@ -75,6 +65,21 @@ class Project
      * @ORM\ManyToOne(targetEntity=Category::class)
      */
     private $category;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $color0;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $color1;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $baseColor;
 
 
     /**
@@ -113,26 +118,6 @@ class Project
     public function setTitle(string $title): void
     {
         $this->title = $title;
-    }
-
-    /**
-     * Getter for Code.
-     *
-     * @return string|null Code
-     */
-    public function getCode(): ?string
-    {
-        return $this->code;
-    }
-
-    /**
-     * Setter for Code.
-     *
-     * @param string $description Code
-     */
-    public function setCode(string $code): void
-    {
-        $this->code = $code;
     }
 
     /**
@@ -185,6 +170,42 @@ class Project
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getColor0(): ?string
+    {
+        return $this->color0;
+    }
+
+    public function setColor0(?string $color0): self
+    {
+        $this->color0 = $color0;
+
+        return $this;
+    }
+
+    public function getColor1(): ?string
+    {
+        return $this->color1;
+    }
+
+    public function setColor1(?string $color1): self
+    {
+        $this->color1 = $color1;
+
+        return $this;
+    }
+
+    public function getBaseColor(): ?string
+    {
+        return $this->baseColor;
+    }
+
+    public function setBaseColor(?string $baseColor): self
+    {
+        $this->baseColor = $baseColor;
 
         return $this;
     }
