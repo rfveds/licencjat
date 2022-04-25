@@ -7,6 +7,7 @@ namespace App\Controller;
 
 use App\Entity\Project;
 use App\Service\ProjectService;
+use App\Repository\ProjectRepository;
 use Doctrine\ORM\ORMException;
 use App\Form\ProjectType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -29,13 +30,19 @@ class ProjectController extends AbstractController
     private ProjectService $projectService;
 
     /**
+     * Project repository.
+     */
+    private ProjectRepository $projectRepository;
+
+    /**
      * ProjectController constructor.
      *
      * @param \App\Service\ProjectService $projectService Project service
      */
-    public function __construct(ProjectService $projectService)
+    public function __construct(ProjectService $projectService, ProjectRepository $projectRepository)
     {
         $this->projectService = $projectService;
+        $this->projectRepository = $projectRepository;
     }
 
     /**
@@ -53,8 +60,11 @@ class ProjectController extends AbstractController
     public function index(Request $request): Response
     {
 
+        $projects = $this->projectRepository->findAll();
+
         return $this->render(
             'project/index.html.twig',
+            ['projects' => $projects]
         );
     }
 

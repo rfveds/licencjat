@@ -62,18 +62,16 @@ class ProjectRepository extends ServiceEntityRepository
 
     /**
      * Query all records.
-     *
-     * @param array $filters Filters array
-     *
+     * 
      * @return QueryBuilder Query builder
      */
-    public function queryAll(array $filters = []): QueryBuilder
+    public function queryAll(): QueryBuilder
     {
         $queryBuilder = $this->getOrCreateQueryBuilder()
             ->select('p')
             ->from('Project', 'p');
 
-        return $this->applyFiltersToList($queryBuilder, $filters);
+        return $this->$queryBuilder;
     }
 
     /**
@@ -83,6 +81,6 @@ class ProjectRepository extends ServiceEntityRepository
      */
     private function getOrCreateQueryBuilder(): QueryBuilder
     {
-        return null ?? $this->createQueryBuilder('element');
+        return null ?? $this->createQueryBuilder('project');
     }
 }
