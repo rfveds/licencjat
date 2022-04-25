@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	{{ 'title_home'|trans }}
+	{{ 'title_app'|trans }}
 {% endblock %}
 
 {% block body %}
@@ -13,12 +13,5 @@
 	<li class="">
 		<a class="" href="{{ url('project_create') }}">Stwórz projekt</a>
 	</li>
-
-
-	{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-		<p>Email:
-			{{ app.user.email }}</p>
-	{% endif %}
-
 
 {% endblock %}

@@ -95,9 +95,6 @@ class ProjectController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->projectService->save($project);
 
-            $this->addFlash('success', 'message_created_successfully');
-
-
             return $this->redirectToRoute('project_show', ['id' => $project->getId()]);
         }
 

@@ -210,6 +210,22 @@
                 <source>title_app</source>
                 <target>Homepage</target>
             </trans-unit>
+            <trans-unit id="title_project_list">
+                <source>title_project_list</source>
+                <target>Projects</target>
+            </trans-unit>
+            <trans-unit id="title_project">
+                <source>title_project</source>
+                <target>Project</target>
+            </trans-unit>
+            <trans-unit id="label_none">
+                <source>label_none</source>
+                <target>Choose from list</target>
+            </trans-unit>
+            <trans-unit id="title_project_create">
+                <source>title_project_create</source>
+                <target>Create Project</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
