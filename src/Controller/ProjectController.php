@@ -86,9 +86,8 @@ class ProjectController extends AbstractController
 
             $this->addFlash('success', 'message_created_successfully');
 
-            var_dump($project->getTitle());
 
-            // return $this->redirectToRoute('project_index');
+            return $this->redirectToRoute('project_show', ['id' => $project->getId()]);
         }
 
         return $this->render(
@@ -105,7 +104,7 @@ class ProjectController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\Response HTTP Response
      *
      * @Route(
-     *     "/{code}",
+     *     "/{id}",
      *     methods={"GET"},
      *     name="project_show",
      * )
