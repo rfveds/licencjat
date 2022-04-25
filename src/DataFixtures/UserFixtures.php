@@ -69,7 +69,7 @@ class UserFixtures extends AbstractBaseFixtures implements DependentFixtureInter
                         'admin1234'
                     )
                 );
-                $user->setUsersData($this->getReference('user_data_'.($i)));
+                $user->setUsersData($this->getReference('user_data_'.($i + 1)));
 
                 return $user;
             }
