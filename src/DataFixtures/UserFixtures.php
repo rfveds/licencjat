@@ -56,24 +56,24 @@ class UserFixtures extends AbstractBaseFixtures implements DependentFixtureInter
             }
         );
 
-        $this->createMany(
-            1,
-            'admins',
-            function ($i) {
-                $user = new User();
-                $user->setEmail(sprintf('admin%d@example.com', $i));
-                $user->setRoles([User::ROLE_USER, User::ROLE_ADMIN]);
-                $user->setPassword(
-                    $this->passwordEncoder->hashPassword(
-                        $user,
-                        'admin1234'
-                    )
-                );
-                $user->setUsersData($this->getReference('user_data_'.($i + 1)));
+        // $this->createMany(
+        //     1,
+        //     'admins',
+        //     function ($i) {
+        //         $user = new User();
+        //         $user->setEmail(sprintf('admin%d@example.com', $i));
+        //         $user->setRoles([User::ROLE_USER, User::ROLE_ADMIN]);
+        //         $user->setPassword(
+        //             $this->passwordEncoder->hashPassword(
+        //                 $user,
+        //                 'admin1234'
+        //             )
+        //         );
+        //         $user->setUsersData($this->getReference('user_data_'.($i + 1)));
 
-                return $user;
-            }
-        );
+        //         return $user;
+        //     }
+        // );
 
         $manager->flush();
     }

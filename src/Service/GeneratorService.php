@@ -86,16 +86,16 @@ class GeneratorService
         );
 
         //tablica z wartosciami kolorow
-        $data[] = array('color' => 'red',      'value' => 0, 'hex' => '123abc');
-        $data[] = array('color' => 'yellow',   'value' => 0, 'hex' => '123abc');
-        $data[] = array('color' => 'blue',     'value' => 0, 'hex' => '123abc');
-        $data[] = array('color' => 'green',    'value' => 0, 'hex' => '123abc');
-        $data[] = array('color' => 'purple',   'value' => 0, 'hex' => '123abc');
-        $data[] = array('color' => 'orange',   'value' => 0, 'hex' => '123abc');
-        $data[] = array('color' => 'brown',    'value' => 0, 'hex' => '123abc');
-        $data[] = array('color' => 'black',    'value' => 0, 'hex' => '123abc');
-        $data[] = array('color' => 'white',    'value' => 0, 'hex' => '123abc');
-        $data[] = array('color' => 'grey',     'value' => 0, 'hex' => '123abc');
+        $data[] = array('color' => 'red',      'value' => 0, 'hex' => 'b42333');
+        $data[] = array('color' => 'yellow',   'value' => 0, 'hex' => 'ffe40a');
+        $data[] = array('color' => 'blue',     'value' => 0, 'hex' => '053fd4');
+        $data[] = array('color' => 'green',    'value' => 0, 'hex' => '439854');
+        $data[] = array('color' => 'purple',   'value' => 0, 'hex' => '5428c9');
+        $data[] = array('color' => 'orange',   'value' => 0, 'hex' => 'f05422');
+        $data[] = array('color' => 'brown',    'value' => 0, 'hex' => '8e4f3f');
+        $data[] = array('color' => 'black',    'value' => 0, 'hex' => '160f05');
+        $data[] = array('color' => 'white',    'value' => 0, 'hex' => 'fffbfa');
+        $data[] = array('color' => 'grey',     'value' => 0, 'hex' => 'd0d4da');
 
 
         // sprawdzenie z jakim kolroem powiązane są słowa
@@ -178,7 +178,7 @@ class GeneratorService
 
         for ($i = 0; $i < sizeof($data); $i++) {
             if ($data[$i]['value'] > $max) {
-                $result = $data[$i]['hex'];
+                $result = $data[$i];
                 $max = $data[$i]['value'];
             }
         }

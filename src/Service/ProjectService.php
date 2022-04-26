@@ -49,14 +49,12 @@ class ProjectService
      * @throws \Doctrine\ORM\ORMException
      * @throws \Doctrine\ORM\OptimisticLockException
      */
-    public function save(Project $project): void
+    public function save(Project $project, $tags): void
     {
-        $tags = $project->getTags();
+       
         $result = $this->generatorService->check_color($tags);
 
-        var_dump($result);
-
-        $baseColor = Color::fromHex($result);
+        $baseColor = Color::fromHex($result['hex']);
         $generator = new PaletteGenerator($baseColor);
         $distance  = 30;
 

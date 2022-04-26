@@ -93,7 +93,16 @@ class ProjectController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->projectService->save($project);
+
+            $data = $form->getData()->getTags()->toArray();
+
+            $tags = [];
+
+            foreach($data as $tag){
+                array_push($tags, $tag->getName());
+            }
+
+            $this->projectService->save($project, $tags);
 
             return $this->redirectToRoute('project_show', ['id' => $project->getId()]);
         }
@@ -119,14 +128,14 @@ class ProjectController extends AbstractController
      */
     public function show(Project $project): Response
     {
-        if ($project->getCategory()->getTitle() == 'product') {
+        if ($project->getCategory()->getTitle() == 'Produkt') {
 
             return $this->render(
                 'editor/product.html.twig',
                 ['project' => $project]
             );
         }
-        if ($project->getCategory()->getTitle() == 'company') {
+        if ($project->getCategory()->getTitle() == 'Firma') {
 
             return $this->render(
                 'editor/company.html.twig',
