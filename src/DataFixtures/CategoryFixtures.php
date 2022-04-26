@@ -21,11 +21,11 @@ class CategoryFixtures extends AbstractBaseFixtures
     public function loadData(ObjectManager $manager): void
     {
         $category_product = new Category();
-        $category_product->setTitle('product');
+        $category_product->setTitle('Produkt');
         $manager->persist($category_product);
 
         $category_company = new Category();
-        $category_company->setTitle('company');
+        $category_company->setTitle('Firma');
         $manager->persist($category_company);
 
         $manager->flush();

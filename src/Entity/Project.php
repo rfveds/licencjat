@@ -81,6 +81,11 @@ class Project
      */
     private $baseColor;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $color2;
+
 
     /**
      * Project constructor.
@@ -206,6 +211,18 @@ class Project
     public function setBaseColor(?string $baseColor): self
     {
         $this->baseColor = $baseColor;
+
+        return $this;
+    }
+
+    public function getColor2(): ?string
+    {
+        return $this->color2;
+    }
+
+    public function setColor2(?string $color2): self
+    {
+        $this->color2 = $color2;
 
         return $this;
     }

@@ -23,12 +23,24 @@
             left: 650px;
 			z-index: 0;
         }
+		.rectangle {
+            height: 200px;
+            width: 300px;
+            position: absolute;
+            top: 300px;
+			left: 1100px;
+            z-index: 2;
+        }
 		.square {
             background-color: #{{ project.color0 }}
             }
         .circle
              {
             background-color: #{{ project.color1 }}
+            }
+        .rectangle
+             {
+            background-color: #{{ project.color2 }}
             }
 	</style>
 	<div class="wrapper">
@@ -46,6 +58,8 @@
                 <div class="square">
                 </div>
                 <div class="circle">
+                </div>
+                <div class="rectangle">
                 </div>
             </div>
 		</div>

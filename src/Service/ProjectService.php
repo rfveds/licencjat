@@ -66,6 +66,7 @@ class ProjectService
         $project->setBaseColor($baseColor);
         $project->setColor0($palette[0]->getHex());
         $project->setColor1($palette[1]->getHex());
+        $project->setColor2($palette[2]->getHex());
 
         $this->projectRepository->save($project);
     }

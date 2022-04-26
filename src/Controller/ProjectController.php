@@ -148,16 +148,14 @@ class ProjectController extends AbstractController
      *
      * @Route(
      *     "/{id}/edit",
-     *     methods={"GET", "PUT"},
      *     requirements={"id": "[1-9]\d*"},
      *     name="project_edit",
      * )
      *
-     * @IsGranted("EDIT", subject="project")
      */
     public function edit(Request $request, Project $project): Response
     {
-        $form = $this->createForm(ProjectType::class, $project, ['method' => 'PUT']);
+        $form = $this->createForm(ProjectType::class, $project);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -189,24 +187,18 @@ class ProjectController extends AbstractController
      *
      * @Route(
      *     "/{id}/delete",
-     *     methods={"GET", "DELETE"},
      *     requirements={"id": "[1-9]\d*"},
      *     name="project_delete",
      * )
      *
-     * @IsGranted("DELETE", subject="project")
      */
     public function delete(Request $request, Project $project): Response
     {
-        $form = $this->createForm(FormType::class, $project, ['method' => 'DELETE']);
+        $form = $this->createForm(FormType::class, $project);
         $form->handleRequest($request);
 
-        if ($request->isMethod('DELETE') && !$form->isSubmitted()) {
-            $form->submit($request->request->get($form->getName()));
-        }
-
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->projectService->save($project);
+            $this->projectService->delete($project);
             $this->addFlash('success', 'message_deleted_successfully');
 
             return $this->redirectToRoute('project_index');

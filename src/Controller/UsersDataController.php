@@ -48,14 +48,14 @@ class UsersDataController extends AbstractController
      *
      * @Route(
      *     "/{id}/edit",
-     *     methods={"GET", "PUT"},
+     *     methods={"GET", "PUT", "POST"},
      *     requirements={"id": "[1-9]\d*"},
      *     name="usersData_edit",
      * )
      */
     public function edit(Request $request, UsersData $usersData): Response
     {
-        $form = $this->createForm(UsersDataType::class, $usersData, ['method' => 'PUT']);
+        $form = $this->createForm(UsersDataType::class, $usersData);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

@@ -226,6 +226,14 @@
                 <source>title_project_create</source>
                 <target>Stwórz Projekt</target>
             </trans-unit>
+            <trans-unit id="title_project_edit">
+                <source>title_project_edit</source>
+                <target>Edycja Projektu</target>
+            </trans-unit>
+            <trans-unit id="title_project_delete">
+                <source>title_project_delete</source>
+                <target>Usuń Projekt</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
