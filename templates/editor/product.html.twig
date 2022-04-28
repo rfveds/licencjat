@@ -7,40 +7,47 @@
 {% block body %}
 	<style>
 		.square {
-            height: 300px;
-            width: 300px;
-            position: absolute;
-            top: 250px;
-			left: 270px;
-            z-index: 1;
+            height: 100px;
+            width: 100px;
         }
         .circle {
-	        border-radius: 50%;
-            height: 400px;
-	        width: 400px;
-            position: absolute;
-            top: 200px;
-            left: 650px;
-			z-index: 0;
+            height: 100px;
+	        width: 100px;
         }
-		.rectangle {
-            height: 200px;
-            width: 300px;
-            position: absolute;
-            top: 300px;
-			left: 1100px;
-            z-index: 2;
+		.rectangle0 {
+            height: 100px;
+            width: 100px;
+        }
+        .rectangle1 {
+            height: 100px;
+            width: 100px;
+        }
+        .rectangle2 {
+            height: 100px;
+            width: 100px;
+        }
+        .rectangle3 {
+            height: 100px;
+            width: 100px;
         }
 		.square {
-            background-color: #{{ project.color0 }}
+            background-color: {{ project.baseColor }}
             }
         .circle
              {
-            background-color: #{{ project.color1 }}
+            background-color: {{ project.color0 }}
             }
-        .rectangle
+        .rectangle0
              {
-            background-color: #{{ project.color2 }}
+            background-color: {{ project.color1 }}
+            }
+        .rectangle1
+             {
+            background-color: {{ project.color2 }}
+            }
+        .rectangle2
+             {
+            background-color: {{ project.color3 }}
             }
 	</style>
 	<div class="wrapper">
@@ -50,6 +57,13 @@
 					<a class="nav-link" href="{{ url('homepage') }}">
 			            {{ 'title_app'|trans }}
                     </a>
+                    <a class="nav-link" href="{{ url('project_colors_generate', {id: project.id}) }}">
+			            {{ 'lable_generate_colors'|trans }}
+                    </a>
+                    {# <form action="{{ url('project_colors_edit', {'id': project.id}) }}" method="GET">
+                        <input type="color" value="#{{ project.baseColor }}" name="base_color"></input>
+                        <buttom type="submit" class="btn btn-primary">Save</button>
+                    </form> #}
 				</li>
 			</ul>
 		</div>
@@ -59,7 +73,11 @@
                 </div>
                 <div class="circle">
                 </div>
-                <div class="rectangle">
+                <div class="rectangle0">
+                </div>
+                <div class="rectangle1">
+                </div>
+                <div class="rectangle2">
                 </div>
             </div>
 		</div>

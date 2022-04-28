@@ -7,6 +7,7 @@
 namespace App\Controller;
 
 use App\Entity\Project;
+use App\Form\ProjectColorType;
 use App\Service\ProjectService;
 use App\Repository\ProjectRepository;
 use Doctrine\ORM\ORMException;
@@ -98,7 +99,7 @@ class ProjectController extends AbstractController
 
             $tags = [];
 
-            foreach($data as $tag){
+            foreach ($data as $tag) {
                 array_push($tags, $tag->getName());
             }
 
@@ -168,7 +169,16 @@ class ProjectController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->projectService->save($project);
+
+            $data = $form->getData()->getTags()->toArray();
+
+            $tags = [];
+
+            foreach ($data as $tag) {
+                array_push($tags, $tag->getName());
+            }
+
+            $this->projectService->save($project, $tags);
             $this->addFlash('success', 'message_updated_successfully');
 
             return $this->redirectToRoute('project_index');
@@ -217,6 +227,38 @@ class ProjectController extends AbstractController
             'project/delete.html.twig',
             [
                 'form' => $form->createView(),
+                'project' => $project,
+            ]
+        );
+    }
+
+
+    /**
+     * Edit colors action.
+     *
+     * @param \Symfony\Component\HttpFoundation\Request $request HTTP request
+     * @param \App\Entity\Project                       $project Project entity
+     *
+     * @return \Symfony\Component\HttpFoundation\Response HTTP response
+     *
+     * @throws \Doctrine\ORM\ORMException
+     * @throws \Doctrine\ORM\OptimisticLockException
+     *
+     * @Route(
+     *     "/{id}/generate_colors",
+     *     requirements={"id": "[1-9]\d*"},
+     *     name="project_colors_generate",
+     * )
+     *
+     */
+    public function generateColors(Project $project): Response
+    {
+
+        $this->projectService->generate($project);
+
+        return $this->render(
+            'editor/product.html.twig',
+            [
                 'project' => $project,
             ]
         );

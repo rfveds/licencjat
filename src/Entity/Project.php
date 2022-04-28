@@ -69,6 +69,11 @@ class Project
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
+    private $baseColor;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
     private $color0;
 
     /**
@@ -79,12 +84,12 @@ class Project
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $baseColor;
+    private $color2;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $color2;
+    private $color3;
 
 
     /**
@@ -223,6 +228,18 @@ class Project
     public function setColor2(?string $color2): self
     {
         $this->color2 = $color2;
+
+        return $this;
+    }
+
+    public function getColor3(): ?string
+    {
+        return $this->color3;
+    }
+
+    public function setColor3(?string $color3): self
+    {
+        $this->color3 = $color3;
 
         return $this;
     }
