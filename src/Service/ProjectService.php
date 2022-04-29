@@ -93,6 +93,29 @@ class ProjectService
         $this->projectRepository->save($project);
     }
 
+    /**
+     * Edit colors.
+     */
+    public function editColors($project, $data): void
+    {
+        $databaseData = [];
+
+        foreach ($data as $color) {
+            //#aaff45 => rgb(r,g,b)
+            $color = $this->hexToRGB($color);
+            // //rgb(r,g,b) => rgb string
+            $color = $this->arrToRGB($color);
+            array_push($databaseData, $color);
+        }
+
+        $project->setBaseColor($databaseData[0]);
+        $project->setColor0($databaseData[1]);
+        $project->setColor1($databaseData[2]);
+        $project->setColor2($databaseData[3]);
+        $project->setColor3($databaseData[4]);
+
+        $this->projectRepository->save($project);
+    }
 
     /**
      * Delete element.
@@ -195,5 +218,10 @@ class ProjectService
         array_unshift($array, array_pop($matches[0]));
 
         return $array;
+    }
+
+    public function rgbToHex()
+    {
+        return '#ffaabb';
     }
 }

@@ -243,4 +243,25 @@ class Project
 
         return $this;
     }
+
+    public function rgbToHex($string){
+
+        $arr = $this->rgbStringToRgbArray($string);
+        $color = sprintf("#%02x%02x%02x", $arr[0], $arr[1], $arr[2]);
+
+        return $color;
+    }
+
+    function rgbStringToRgbArray($string)
+    {
+        $pattern = '/([0-9][0-9][0-9]|[0-9][0-9]|[0-9])/';
+        preg_match_all($pattern, $string, $matches);
+
+        $array = [];
+        array_unshift($array, array_pop($matches[0]));
+        array_unshift($array, array_pop($matches[0]));
+        array_unshift($array, array_pop($matches[0]));
+
+        return $array;
+    }
 }

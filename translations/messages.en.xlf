@@ -234,6 +234,10 @@
                 <source>title_project_delete</source>
                 <target>Delete Project</target>
             </trans-unit>
+            <trans-unit id="label_generate_colors">
+                <source>label_generate_colors</source>
+                <target>Generate palette</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

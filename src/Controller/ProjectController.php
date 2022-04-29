@@ -7,12 +7,11 @@
 namespace App\Controller;
 
 use App\Entity\Project;
-use App\Form\ProjectColorType;
+use App\Form\ColorsType;
 use App\Service\ProjectService;
 use App\Repository\ProjectRepository;
 use Doctrine\ORM\ORMException;
 use App\Form\ProjectType;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
@@ -249,12 +248,51 @@ class ProjectController extends AbstractController
      *     requirements={"id": "[1-9]\d*"},
      *     name="project_colors_generate",
      * )
-     *
+     * 
      */
     public function generateColors(Project $project): Response
     {
 
         $this->projectService->generate($project);
+
+        return $this->render(
+            'editor/product.html.twig',
+            [
+                'project' => $project,
+            ]
+        );
+    }
+
+    /**
+     * Edit colors action.
+     *
+     * @param \Symfony\Component\HttpFoundation\Request $request HTTP request
+     * @param \App\Entity\Project                       $project Project entity
+     *
+     * @return \Symfony\Component\HttpFoundation\Response HTTP response
+     *
+     * @throws \Doctrine\ORM\ORMException
+     * @throws \Doctrine\ORM\OptimisticLockException
+     *
+     * @Route(
+     *     "/{id}/edit_colors",
+     *     requirements={"id": "[1-9]\d*"},
+     *     name="project_colors_edit",
+     * )
+     * 
+     */
+    public function editColors(Request $request, Project $project): Response
+    {
+
+        $baseColor = $request->get('base_color');
+        $color0 = $request->get('color0');
+        $color1 = $request->get('color1');
+        $color2 = $request->get('color2');
+        $color3 = $request->get('color3');
+
+        $data = [$baseColor, $color0, $color1, $color2, $color3];
+
+        $this->projectService->editColors($project, $data);
 
         return $this->render(
             'editor/product.html.twig',

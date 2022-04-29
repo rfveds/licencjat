@@ -58,12 +58,20 @@
 			            {{ 'title_app'|trans }}
                     </a>
                     <a class="nav-link" href="{{ url('project_colors_generate', {id: project.id}) }}">
-			            {{ 'lable_generate_colors'|trans }}
+			            {{ 'label_generate_colors'|trans }}
                     </a>
-                    {# <form action="{{ url('project_colors_edit', {'id': project.id}) }}" method="GET">
-                        <input type="color" value="#{{ project.baseColor }}" name="base_color"></input>
-                        <buttom type="submit" class="btn btn-primary">Save</button>
-                    </form> #}
+                    <form action="{{ url('project_colors_edit', {'id': project.id}) }}" method="GET">
+                        <input type="color" value="{{ project.rgbToHex(project.baseColor) }}" name="base_color"></input>
+                        <input type="submit" value="Submit">
+                        <input type="color" value="{{ project.rgbToHex(project.color0) }}" name="color0"></input>
+                        <input type="submit" value="Submit">
+                        <input type="color" value="{{ project.rgbToHex(project.color1) }}" name="color1"></input>
+                        <input type="submit" value="Submit">
+                        <input type="color" value="{{ project.rgbToHex(project.color2) }}" name="color2"></input>
+                        <input type="submit" value="Submit">
+                        <input type="color" value="{{ project.rgbToHex(project.color3) }}" name="color3"></input>
+                        <input type="submit" value="Submit">
+                    </form>
 				</li>
 			</ul>
 		</div>
