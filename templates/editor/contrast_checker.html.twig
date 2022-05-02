@@ -24,13 +24,13 @@
 
   <section class="container__body">
     <div class="input input--container">
-      <input type="text" id="foreground" placeholder="&nbsp;" name="foreground" value="#bbdefb" spellcheck="false" class="input__input" js-foreground>
+      <input type="text" id="foreground" placeholder="&nbsp;" name="foreground" value="{{ project.rgbToHex(project.lightShades) }}" spellcheck="false" class="input__input" js-foreground>
       <label for="foreground" class="input__label">Foreground:</label>
       <p class="input__error" js-foreground-err>Color is incorrect</p>
       <input js-foreground-color-input class="input__color input__color--foreground" type="color" aria-hidden="true">
     </div>
     <div class="input input--container">
-      <input type="text" id="background" placeholder="&nbsp;" name="background" value="#424242" spellcheck="false" class="input__input" js-background>
+      <input type="text" id="background" placeholder="&nbsp;" name="background" value="{{ project.rgbToHex(project.darkShades) }}" spellcheck="false" class="input__input" js-background>
       <label for="background" class="input__label">Background:</label>
       <p class="input__error" js-background-err>Color is incorrect</p>
       <input js-background-color-input class="input__color input__color--background" type="color" aria-hidden="true">
