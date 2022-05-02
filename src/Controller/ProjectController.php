@@ -284,13 +284,13 @@ class ProjectController extends AbstractController
     public function editColors(Request $request, Project $project): Response
     {
 
-        $baseColor = $request->get('base_color');
-        $color0 = $request->get('color0');
-        $color1 = $request->get('color1');
-        $color2 = $request->get('color2');
-        $color3 = $request->get('color3');
+        $baseColor = $request->get('baseColor');
+        $lightShades = $request->get('lightShades');
+        $lightAccent = $request->get('lightAccent');
+        $darkAccent = $request->get('darkAccent');
+        $darkShades = $request->get('darkShades');
 
-        $data = [$baseColor, $color0, $color1, $color2, $color3];
+        $data = [$lightShades, $lightAccent, $baseColor, $darkAccent, $darkShades];
 
         $this->projectService->editColors($project, $data);
 

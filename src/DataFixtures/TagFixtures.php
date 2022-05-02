@@ -7,8 +7,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Tag;
-use App\Entity\Color;
-use App\Repository\ColorRepository;
+
 
 use Doctrine\Persistence\ObjectManager;
 
@@ -40,7 +39,7 @@ class TagFixtures extends AbstractBaseFixtures
             ->setColor($this->getReference($data['reference']));
     }
 
-    private function getData()
+    public function getData()
     {
         return
             [
@@ -69,7 +68,7 @@ class TagFixtures extends AbstractBaseFixtures
                     'reference' => 'yellow'
                 ],
                 [
-                    'name' => 'wyobrźnia',
+                    'name' => 'wyobraźnia',
                     'reference' => 'yellow'
                 ],
                 [
@@ -157,11 +156,7 @@ class TagFixtures extends AbstractBaseFixtures
                     'reference' => 'brown'
                 ],
                 [
-                    'name' => 'formalny',
-                    'reference' => 'black'
-                ],
-                [
-                    'name' => 'wyrafinowany',
+                    'name' => 'wyrafinowanie',
                     'reference' => 'black'
                 ],
                 [

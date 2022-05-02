@@ -74,22 +74,22 @@ class Project
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $color0;
+    private $lightShades;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $color1;
+    private $lightAccent;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $color2;
+    private $darkAccent;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $color3;
+    private $darkShades;
 
 
     /**
@@ -184,26 +184,26 @@ class Project
         return $this;
     }
 
-    public function getColor0(): ?string
+    public function getLightShades(): ?string
     {
-        return $this->color0;
+        return $this->lightShades;
     }
 
-    public function setColor0(?string $color0): self
+    public function setLightShades(?string $lightShades): self
     {
-        $this->color0 = $color0;
+        $this->lightShades = $lightShades;
 
         return $this;
     }
 
-    public function getColor1(): ?string
+    public function getLightAccent(): ?string
     {
-        return $this->color1;
+        return $this->lightAccent;
     }
 
-    public function setColor1(?string $color1): self
+    public function setLightAccent(?string $lightAccent): self
     {
-        $this->color1 = $color1;
+        $this->lightAccent = $lightAccent;
 
         return $this;
     }
@@ -220,26 +220,26 @@ class Project
         return $this;
     }
 
-    public function getColor2(): ?string
+    public function getDarkAccent(): ?string
     {
-        return $this->color2;
+        return $this->darkAccent;
     }
 
-    public function setColor2(?string $color2): self
+    public function setDarkAccent(?string $darkAccent): self
     {
-        $this->color2 = $color2;
+        $this->darkAccent = $darkAccent;
 
         return $this;
     }
 
-    public function getColor3(): ?string
+    public function getDarkShades(): ?string
     {
-        return $this->color3;
+        return $this->darkShades;
     }
 
-    public function setColor3(?string $color3): self
+    public function setDarkShades(?string $darkShades): self
     {
-        $this->color3 = $color3;
+        $this->darkShades = $darkShades;
 
         return $this;
     }

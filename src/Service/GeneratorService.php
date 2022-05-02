@@ -6,84 +6,76 @@
 
 namespace App\Service;
 
+use App\DataFixtures\TagFixtures;
 
 /**
  * Class GeneratorService.
  */
 class GeneratorService
 {
+    /**
+     * Tag fixtures.
+     */
+    private TagFixtures $tagDataFixtures;
+
+    /**
+     * GeneratorService constructor.
+     *
+     * @param \App\DataFixtures\TagFixtures       $TagFixtures Tag fixtures
+     */
+    public function __construct(TagFixtures $tagDataFixtures)
+    {
+        $this->tagDataFixtures = $tagDataFixtures;
+    }
 
     public function check_color($input)
     {
-        //slowa skojarzone ze slowami
-        $red = array(
-            'energia',
-            'ekscytacja',
-            'piękno',
-            'dominacja'
-        );
 
-        $yellow = array(
-            'radość',
-            'wyobrźnia',
-            'optymizm',
-            'ciekawość',
-        );
+        $tags = $this->tagDataFixtures->getData();
 
-        $blue = array(
-            'technologia',
-            'kompetencje',
-            'spokój',
-            'lojalność',
-        );
+        $red = [];
+        $yellow = [];
+        $blue = [];
+        $green = [];
+        $purple = [];
+        $orange = [];
+        $brown = [];
+        $black = [];
+        $white = [];
+        $grey = [];
 
-        $green = array(
-            'zysk',
-            'balans',
-            'natura',
-            'sukces',
-        );
-
-        $purple = array(
-            'kobiecość',
-            'wyrafinowanie',
-            'luksus',
-            'nowoczesność',
-        );
-
-        $orange = array(
-            'kreatywność',
-            'aktywność',
-            'żywiołowość',
-            'unikalność',
-        );
-
-        $brown = array(
-            'trwałość',
-            'stabilność',
-            'szczerość',
-            'tradycja',
-        );
-
-        $black = array(
-            'formalny',
-            'wyrafinowany',
-            'pewność',
-            'powaga',
-        );
-
-        $white = array(
-            'czystość',
-            'prostota',
-            'spokój',
-            'niewinność',
-        );
-
-        $grey = array(
-            'dojrzałość',
-            'balans',
-            'bezpieczenstwo',
-        );
+        foreach ($tags as $t) {
+            if ($t['reference'] == 'red') {
+                array_push($red, $t['name']);
+            }
+            if ($t['reference'] == 'yellow') {
+                array_push($yellow, $t['name']);
+            }
+            if ($t['reference'] == 'blue') {
+                array_push($blue, $t['name']);
+            }
+            if ($t['reference'] == 'green') {
+                array_push($green, $t['name']);
+            }
+            if ($t['reference'] == 'purple') {
+                array_push($purple, $t['name']);
+            }
+            if ($t['reference'] == 'orange') {
+                array_push($orange, $t['name']);
+            }
+            if ($t['reference'] == 'brown') {
+                array_push($brown, $t['name']);
+            }
+            if ($t['reference'] == 'black') {
+                array_push($black, $t['name']);
+            }
+            if ($t['reference'] == 'white') {
+                array_push($white, $t['name']);
+            }
+            if ($t['reference'] == 'grey') {
+                array_push($grey, $t['name']);
+            }
+        }
 
         //tablica z wartosciami kolorow
         $data[] = array('color' => 'red',      'value' => 0, 'hex' => 'b42333');
@@ -95,7 +87,7 @@ class GeneratorService
         $data[] = array('color' => 'brown',    'value' => 0, 'hex' => '8e4f3f');
         $data[] = array('color' => 'black',    'value' => 0, 'hex' => '160f05');
         $data[] = array('color' => 'white',    'value' => 0, 'hex' => 'fffbfa');
-        $data[] = array('color' => 'grey',     'value' => 0, 'hex' => 'd0d4da');
+        $data[] = array('color' => 'grey',     'value' => 0, 'hex' => '515150');
 
 
         // sprawdzenie z jakim kolroem powiązane są słowa

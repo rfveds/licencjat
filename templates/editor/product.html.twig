@@ -1,53 +1,48 @@
 {% block stylesheets %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/editor.css') }}"></link>
 {% endblock %}
 
 {% block body %}
 	<style>
-		.square {
-            height: 100px;
-            width: 100px;
-        }
-        .circle {
+        .lightShades {
             height: 100px;
 	        width: 100px;
         }
-		.rectangle0 {
+		.lightAccent {
             height: 100px;
             width: 100px;
         }
-        .rectangle1 {
+        .baseColor {
             height: 100px;
             width: 100px;
         }
-        .rectangle2 {
+        .darkAccent {
             height: 100px;
             width: 100px;
         }
-        .rectangle3 {
+        .darkShades {
             height: 100px;
             width: 100px;
         }
-		.square {
+        .lightShades
+             {
+            background-color: {{ project.lightShades }}
+            }
+        .lightAccent
+             {
+            background-color: {{ project.lightAccent }}
+            }
+    	.baseColor {
             background-color: {{ project.baseColor }}
             }
-        .circle
+        .darkAccent
              {
-            background-color: {{ project.color0 }}
+            background-color: {{ project.darkAccent }}
             }
-        .rectangle0
+        .darkShades
              {
-            background-color: {{ project.color1 }}
-            }
-        .rectangle1
-             {
-            background-color: {{ project.color2 }}
-            }
-        .rectangle2
-             {
-            background-color: {{ project.color3 }}
+            background-color: {{ project.darkShades }}
             }
 	</style>
 	<div class="wrapper">
@@ -60,32 +55,39 @@
                     <a class="nav-link" href="{{ url('project_colors_generate', {id: project.id}) }}">
 			            {{ 'label_generate_colors'|trans }}
                     </a>
-                    <form action="{{ url('project_colors_edit', {'id': project.id}) }}" method="GET">
-                        <input type="color" value="{{ project.rgbToHex(project.baseColor) }}" name="base_color"></input>
-                        <input type="submit" value="Submit">
-                        <input type="color" value="{{ project.rgbToHex(project.color0) }}" name="color0"></input>
-                        <input type="submit" value="Submit">
-                        <input type="color" value="{{ project.rgbToHex(project.color1) }}" name="color1"></input>
-                        <input type="submit" value="Submit">
-                        <input type="color" value="{{ project.rgbToHex(project.color2) }}" name="color2"></input>
-                        <input type="submit" value="Submit">
-                        <input type="color" value="{{ project.rgbToHex(project.color3) }}" name="color3"></input>
-                        <input type="submit" value="Submit">
-                    </form>
+                   
 				</li>
 			</ul>
+        <div>
+             <form action="{{ url('project_colors_edit', {'id': project.id}) }}" method="GET">
+                        <input type="color" value="{{ project.rgbToHex(project.lightShades) }}" name="lightShades"></input>
+                        <input type="submit" value="Submit">
+                        <input type="color" value="{{ project.rgbToHex(project.lightAccent) }}" name="lightAccent"></input>
+                        <input type="submit" value="Submit">
+                        <input type="color" value="{{ project.rgbToHex(project.baseColor) }}" name="baseColor"></input>
+                        <input type="submit" value="Submit">
+                        <input type="color" value="{{ project.rgbToHex(project.darkAccent) }}" name="darkAccent"></input>
+                        <input type="submit" value="Submit">
+                        <input type="color" value="{{ project.rgbToHex(project.darkShades) }}" name="darkShades"></input>
+                        <input type="submit" value="Submit">
+            </form>            
+        </div>
+        <div>
+        </div>
 		</div>
 		<div class="main-content">
 			<div class="graphic">
-                <div class="square">
+                <div class="lightShades">
+                    <p style="color: {{ project.darkShades }}">Lorem Ipsum</p>
                 </div>
-                <div class="circle">
+                <div class="lightAccent">
                 </div>
-                <div class="rectangle0">
+                <div class="baseColor">
                 </div>
-                <div class="rectangle1">
+                <div class="darkAccent">
                 </div>
-                <div class="rectangle2">
+                <div class="darkShades">
+                    <p style="color: {{ project.lightShades }}">Lorem Ipsum</p>
                 </div>
             </div>
 		</div>

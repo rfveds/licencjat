@@ -50,18 +50,17 @@ class ProjectService
     {
         //hex
         $baseColor = $this->generatorService->check_color($tags)['hex'];
-        var_dump($baseColor);
 
         //[r,g,b]
         $baseColor = $this->rgbArrToString($this->hexToRGB($baseColor));
 
         $palette = $this->getPalette($baseColor);
 
-        $project->setBaseColor($palette[0]);
-        $project->setColor0($palette[1]);
-        $project->setColor1($palette[2]);
-        $project->setColor2($palette[3]);
-        $project->setColor3($palette[4]);
+        $project->setLightShades($palette[0]);
+        $project->setLightAccent($palette[1]);
+        $project->setBaseColor($palette[2]);
+        $project->setDarkAccent($palette[3]);
+        $project->setDarkShades($palette[4]);
 
 
         $this->projectRepository->save($project);
@@ -84,11 +83,12 @@ class ProjectService
 
         $palette = $this->getPalette($baseColor);
 
-        $project->setBaseColor($palette[0]);
-        $project->setColor0($palette[1]);
-        $project->setColor1($palette[2]);
-        $project->setColor2($palette[3]);
-        $project->setColor3($palette[4]);
+      
+        $project->setlightShades($palette[0]);
+        $project->setlightAccent($palette[1]);
+        $project->setBaseColor($palette[2]);
+        $project->setDarkAccent($palette[3]);
+        $project->setDarkShades($palette[4]);
 
         $this->projectRepository->save($project);
     }
@@ -108,11 +108,11 @@ class ProjectService
             array_push($databaseData, $color);
         }
 
-        $project->setBaseColor($databaseData[0]);
-        $project->setColor0($databaseData[1]);
-        $project->setColor1($databaseData[2]);
-        $project->setColor2($databaseData[3]);
-        $project->setColor3($databaseData[4]);
+        $project->setLightShades($databaseData[0]);
+        $project->setLightAccent($databaseData[1]);
+        $project->setBaseColor($databaseData[2]);
+        $project->setDarkAccent($databaseData[3]);
+        $project->setDarkShades($databaseData[4]);
 
         $this->projectRepository->save($project);
     }
@@ -151,13 +151,13 @@ class ProjectService
             '{
                 "input":
                     [
+                        "N",
+                        "N",
                         ' . $baseColor . ',
-                        "N",
-                        "N",
                         "N",
                         "N"
                     ],
-                "model":"default"
+                "model":"ui"
             }'
         );
 
@@ -173,13 +173,13 @@ class ProjectService
         //array
         $json = json_decode($output);
 
-        $color0 = $this->arrToRGB($json->result[0]);
-        $color1 = $this->arrToRGB($json->result[1]);
-        $color2 = $this->arrToRGB($json->result[2]);
-        $color3 = $this->arrToRGB($json->result[3]);
-        $color4 = $this->arrToRGB($json->result[4]);
+        $lightShades = $this->arrToRGB($json->result[0]);
+        $lightAccent = $this->arrToRGB($json->result[1]);
+        $baseColor = $this->arrToRGB($json->result[2]);
+        $darkAccent = $this->arrToRGB($json->result[3]);
+        $darkShades = $this->arrToRGB($json->result[4]);
 
-        $palette = [$color0, $color1, $color2, $color3, $color4];
+        $palette = [$lightShades, $lightAccent, $baseColor, $darkAccent, $darkShades];
 
         return $palette;
     }
