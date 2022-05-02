@@ -1,0 +1,73 @@
+  <svg hidden style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <symbol id="pass" viewBox="0 0 24 24">
+        <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+      </symbol>
+      <symbol id="fail" viewBox="0 0 24 24">
+        <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12C4,13.85 4.63,15.55 5.68,16.91L16.91,5.68C15.55,4.63 13.85,4 12,4M12,20A8,8 0 0,0 20,12C20,10.15 19.37,8.45 18.32,7.09L7.09,18.32C8.45,19.37 10.15,20 12,20Z"/>
+      </symbol>
+      <symbol id="swap" viewBox="0 0 24 24">
+        <path d="M9,3L5,7H8V14H10V7H13M16,17V10H14V17H11L15,21L19,17H16Z"/>
+      </symbol>
+      <symbol id="caution" viewBox="0 0 24 24">
+        <path d="M13,14H11V10H13M13,18H11V16H13M1,21H23L12,2L1,21Z"/>
+      </symbol>
+    </defs>
+  </svg>
+  
+  <header class="container__header header">
+    <p class="header__text">Contrast Ratio Checker</p>
+    {# <button type="button" class="header__button" js-swap aria-label="Swap foreground and background colors">
+      <svg aria-hidden="true"><use xlink:href="#swap"></use></svg>
+    </button> #}
+  </header>
+
+  <section class="container__body">
+    <div class="input input--container">
+      <input type="text" id="foreground" placeholder="&nbsp;" name="foreground" value="#bbdefb" spellcheck="false" class="input__input" js-foreground>
+      <label for="foreground" class="input__label">Foreground:</label>
+      <p class="input__error" js-foreground-err>Color is incorrect</p>
+      <input js-foreground-color-input class="input__color input__color--foreground" type="color" aria-hidden="true">
+    </div>
+    <div class="input input--container">
+      <input type="text" id="background" placeholder="&nbsp;" name="background" value="#424242" spellcheck="false" class="input__input" js-background>
+      <label for="background" class="input__label">Background:</label>
+      <p class="input__error" js-background-err>Color is incorrect</p>
+      <input js-background-color-input class="input__color input__color--background" type="color" aria-hidden="true">
+    </div>
+  </section>
+  
+  {# <section class="container__warning warning">
+    <p class="warning__container">
+      <span class="warning__text-icon"><svg role="img" aria-label="caution"><use xlink:href="#caution"></use></svg></span>
+      <span class="warning__text-text">Opacity values will not work as desired.</span>
+    </p>
+  </section> #}
+  
+  <section class="container__body wcag wcag--container">
+    <p class="wcag__ratio"><a href="https://www.w3.org/TR/WCAG21/#contrast-minimum" target="_blank" title="Web Content Accessibility Guidelines"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr></a> Contrast ratio: <output id="output" js-output>4.9</output></p>
+    <p class="wcag__level wcag__level--aa-large">
+      <span class="wcag__level-icon wcag__level-icon--pass" js-aa-large="pass"><svg role="img" aria-label="pass"><use xlink:href="#pass"></use></svg></span>
+      <span class="wcag__level-icon wcag__level-icon--fail" js-aa-large="fail"><svg role="img" aria-label="fail"><use xlink:href="#fail"></use></svg></span>
+      <span class="wcag__level-text">AA&nbsp; large font size (3:1)</span>
+    </p>
+    <p class="wcag__level wcag__level--aa-small">
+      <span class="wcag__level-icon wcag__level-icon--pass" js-aa-small="pass" aria-label="passes"><svg role="img" aria-label="pass"><use xlink:href="#pass"></use></svg></span>
+      <span class="wcag__level-icon wcag__level-icon--fail" js-aa-small="fail" aria-label="fails"><svg role="img" aria-label="fail"><use xlink:href="#fail"></use></svg></span>
+      <span class="wcag__level-text">AA&nbsp; small font size (4.5:1)</span>
+    </p>
+    <p class="wcag__level wcag__level--aaa-large">
+      <span class="wcag__level-icon wcag__level-icon--pass" js-aaa-large="pass" aria-label="passes"><svg role="img" aria-label="pass"><use xlink:href="#pass"></use></svg></span>
+      <span class="wcag__level-icon wcag__level-icon--fail" js-aaa-large="fail" aria-label="fails"><svg role="img" aria-label="fail"><use xlink:href="#fail"></use></svg></span>
+      <span class="wcag__level-text">AAA large font size (4.5:1)</span>
+    </p>
+    <p class="wcag__level wcag__level--aaa-small">
+      <span class="wcag__level-icon wcag__level-icon--pass" js-aaa-small="pass" aria-label="passes"><svg role="img" aria-label="pass"><use xlink:href="#pass"></use></svg></span>
+      <span class="wcag__level-icon wcag__level-icon--fail" js-aaa-small="fail" aria-label="fails"><svg role="img" aria-label="fail"><use xlink:href="#fail"></use></svg></span>
+      <span class="wcag__level-text">AAA small font size (7:1)</span>
+    </p>
+  </section>
+
+  {# <footer class="container__footer result result--container">
+    <p class="result__text" contenteditable="true">Click to edit Me!</p>
+  </footer> #}

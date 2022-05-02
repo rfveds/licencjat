@@ -83,7 +83,7 @@ class ProjectService
 
         $palette = $this->getPalette($baseColor);
 
-      
+
         $project->setlightShades($palette[0]);
         $project->setlightAccent($palette[1]);
         $project->setBaseColor($palette[2]);
@@ -132,7 +132,7 @@ class ProjectService
 
 
     /**
-     * Get color palette form Colormind API 
+     * Get color palette form Colormind API.
      */
     function getPalette($baseColor)
     {
