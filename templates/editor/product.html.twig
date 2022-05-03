@@ -2,51 +2,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="{{ asset('css/editor.css') }}"></link>
 	<link rel="stylesheet" href="{{ asset('css/contrast_checker.css') }}"></link>
-
+    <link rel="stylesheet" href="{{ asset('css/product.css') }}"></link>
 {% endblock %}
 
 {% block body %}
-	<style>
-        .lightShades {
-            height: 100px;
-	        width: 100px;
-        }
-		.lightAccent {
-            height: 100px;
-            width: 100px;
-        }
-        .baseColor {
-            height: 100px;
-            width: 100px;
-        }
-        .darkAccent {
-            height: 100px;
-            width: 100px;
-        }
-        .darkShades {
-            height: 100px;
-            width: 100px;
-        }
-        .lightShades
-             {
-            background-color: {{ project.lightShades }}
-            }
-        .lightAccent
-             {
-            background-color: {{ project.lightAccent }}
-            }
-    	.baseColor {
-            background-color: {{ project.baseColor }}
-            }
-        .darkAccent
-             {
-            background-color: {{ project.darkAccent }}
-            }
-        .darkShades
-             {
-            background-color: {{ project.darkShades }}
-            }
-	</style>
 	<div class="wrapper">
 		<div class="settings">
 			<ul class="nav">
@@ -64,27 +23,27 @@
                 <div>
                     {{ project.rgbToHex(project.lightShades) }}
                     <input type="color" value="{{ project.rgbToHex(project.lightShades) }}" name="lightShades"></input>
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Aktualizuj">
                 </div>
                 <div>
                     {{ project.rgbToHex(project.lightAccent) }}
                     <input type="color" value="{{ project.rgbToHex(project.lightAccent) }}" name="lightAccent"></input>
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Aktualizuj">
                 </div>
                 <div>
                     {{ project.rgbToHex(project.baseColor) }}
                     <input type="color" value="{{ project.rgbToHex(project.baseColor) }}" name="baseColor"></input>
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Aktualizuj">
                 </div>
                 <div>
                     {{ project.rgbToHex(project.darkAccent) }}
                     <input type="color" value="{{ project.rgbToHex(project.darkAccent) }}" name="darkAccent"></input>
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Aktualizuj">
                 </div>
                 <div>
                     {{ project.rgbToHex(project.darkShades) }}
                     <input type="color" value="{{ project.rgbToHex(project.darkShades) }}" name="darkShades"></input>
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Aktualizuj">
                 </div>
             </form>   
 
@@ -93,20 +52,9 @@
         </div>
         
 		<div class="main-content">
-			<div class="graphic">
-                <div class="lightShades">
-                    <p style="color: {{ project.darkShades }}">Lorem Ipsum</p>
-                </div>
-                <div class="lightAccent">
-                </div>
-                <div class="baseColor">
-                </div>
-                <div class="darkAccent">
-                </div>
-                <div class="darkShades">
-                    <p style="color: {{ project.lightShades }}">Lorem Ipsum</p>
-                </div>
-            </div>
+
+            {% include 'editor/product_template.html.twig' %}
+
 		</div>
 	</div>
 

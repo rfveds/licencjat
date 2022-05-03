@@ -9,7 +9,7 @@ body {
     grid-template-areas:
         "s m";
     grid-template-rows: 1fr;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 180px 1fr;
 }
 
 .colors__settings{
@@ -23,7 +23,6 @@ body {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-
 }
 
 .main-content {
