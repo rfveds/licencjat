@@ -9,12 +9,17 @@ body {
     grid-template-areas:
         "s m";
     grid-template-rows: 1fr;
-    grid-template-columns: 180px 1fr;
+    grid-template-columns: 160px 1fr;
 }
 
 .colors__settings{
     display: flex;
     flex-direction: column;
+}
+
+.colors--value{
+    color: black;
+    display: inline-block;
 }
 
 .settings {

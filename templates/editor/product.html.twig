@@ -8,8 +8,8 @@
 {% block body %}
 	<div class="wrapper">
 		<div class="settings">
-			<ul class="nav">
-				<li class="nav-item">
+			<ul class="nav justify-content-center">
+				<li class="nav-item justify-content-center">
 					<a class="nav-link" href="{{ url('homepage') }}">
 			            {{ 'title_app'|trans }}
                     </a>
@@ -20,31 +20,30 @@
 			</ul>  
 
            <form action="{{ url('project_colors_edit', {'id': project.id}) }}" method="GET" class="colors__settings">
-                <div>
-                    {{ project.rgbToHex(project.lightShades) }}
-                    <input type="color" value="{{ project.rgbToHex(project.lightShades) }}" name="lightShades"></input>
+                <section class="container__body">
+                    <div class="input input--container">
+                        <p class="input__input__label">{{ project.rgbToHex(project.lightShades) }}</p>
+                        <input class="input__color input__color--foreground input__input input__input__color" type="color" value="{{ project.rgbToHex(project.lightShades) }}" name="lightShades"></input>
+                    </div>
+                    <div class="input input--container">
+                        <p class="input__input__label">{{ project.rgbToHex(project.lightAccent) }}</p>
+                        <input class="input__color input__color--foreground input__input input__input__color" type="color" value="{{ project.rgbToHex(project.lightAccent) }}" name="lightAccent"></input>
+                    </div>
+                    <div class="input input--container">
+                        <p class="input__input__label">{{ project.rgbToHex(project.baseColor) }}</p>
+                        <input class="input__color input__color--foreground input__input input__input__color" type="color" value="{{ project.rgbToHex(project.baseColor) }}" name="baseColor"></input>
+                    </div>
+                    <div class="input input--container">
+                        <p class="input__input__label">{{ project.rgbToHex(project.darkAccent) }}</p>
+                        <input class="input__color input__color--foreground input__input input__input__color" type="color" value="{{ project.rgbToHex(project.darkAccent) }}" name="darkAccent"></input>
+                    </div >
+                    <div class="input input--container">
+                        <p class="input__input__label">{{ project.rgbToHex(project.darkShades) }}</p>
+                        <input class="input__color input__color--foreground input__input input__input__color" type="color" value="{{ project.rgbToHex(project.darkShades) }}" name="darkShades"></input>
+                    </div>
                     <input type="submit" value="Aktualizuj">
-                </div>
-                <div>
-                    {{ project.rgbToHex(project.lightAccent) }}
-                    <input type="color" value="{{ project.rgbToHex(project.lightAccent) }}" name="lightAccent"></input>
-                    <input type="submit" value="Aktualizuj">
-                </div>
-                <div>
-                    {{ project.rgbToHex(project.baseColor) }}
-                    <input type="color" value="{{ project.rgbToHex(project.baseColor) }}" name="baseColor"></input>
-                    <input type="submit" value="Aktualizuj">
-                </div>
-                <div>
-                    {{ project.rgbToHex(project.darkAccent) }}
-                    <input type="color" value="{{ project.rgbToHex(project.darkAccent) }}" name="darkAccent"></input>
-                    <input type="submit" value="Aktualizuj">
-                </div>
-                <div>
-                    {{ project.rgbToHex(project.darkShades) }}
-                    <input type="color" value="{{ project.rgbToHex(project.darkShades) }}" name="darkShades"></input>
-                    <input type="submit" value="Aktualizuj">
-                </div>
+                </section>
+                
             </form>   
 
             {% include 'editor/contrast_checker.html.twig' %}

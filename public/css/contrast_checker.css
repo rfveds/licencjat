@@ -60,45 +60,11 @@
   font-size: calc(var(--root-font-size) * 1px);
 }
 
-body, html {
-  width: 100vw;
-  height: 100vh;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-}
-
 :root {
   --output-background: #424242;
   --output-foreground: #d1f3cd;
 }
 
-h1 {
-  font-size: 1.5rem;
-  line-height: 1.5;
-}
-
-a {
-  will-change: background-color;
-  display: inline-block;
-  margin: -0.125rem -0.25rem;
-  padding: 0.125rem 0.25rem;
-  color: var(--tertiary-dark);
-  background-color: rgba(227, 242, 253, 0);
-  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-a:hover, a:focus {
-  background-color: #e3f2fd;
-}
-
-*:focus {
-  outline-color: var(--tertiary);
-  outline-width: 0.0625rem;
-  outline-style: solid;
-  outline-offset: 0.25rem;
-}
 
 input {
   -webkit-appearance: none;
@@ -116,6 +82,16 @@ input[type=color] {
   border-radius: 50%;
 }
 
+input[type=submit] {
+  border: 1px solid var(--border-color-on-light);
+  height: 3rem;
+  background-color: #408b45;
+}
+
+input[type=submit]:hover {
+  background-color: #49a34f;
+}
+
 input[type=color]::-webkit-color-swatch-wrapper {
   display: block;
   padding: 0;
@@ -127,28 +103,6 @@ input[type=color]::-webkit-color-swatch {
   height: 1.5rem;
   border-radius: 50%;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-}
-
-button {
-  display: inline-block;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  font-size: 0;
-  padding: 0;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-svg {
-  width: 1rem;
-  height: 1rem;
-  fill: currentColor;
-}
-
-[hidden] {
-  display: none;
 }
 
 .container {
@@ -165,12 +119,13 @@ svg {
   padding: 0;
 }
 
-.container__body:first-of-type {
-  padding: 0 ;
+.container__body {
+  padding: 0;
 }
 
-.container__body:not(:first-of-type) {
-  padding: 0 1.5rem 1rem;
+.container__body {
+  display: flex;
+  flex-direction: column;
 }
 
 .container__footer {
@@ -182,56 +137,7 @@ svg {
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.header__button {
-  position: relative;
-  padding: 0.5rem;
-  background-color: var(--tertiary);
-  color: var(--primary-text-on-tertiary);
-  border-radius: 50%;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-}
-
-.header__button svg {
-  will-change: transform;
-  transform-origin: cetner center;
-  transform: rotate(0deg);
-  transition: transform 100ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.header__button::after {
-  content: attr(aria-label);
-  will-change: opacity;
-  position: absolute;
-  right: 100%;
-  top: 100%;
-  color: var(--primary-text-on-primary);
-  font-size: 0.875rem;
-  white-space: nowrap;
-  background-color: var(--primary);
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
-  pointer-events: none;
-  z-index: 100000;
-  opacity: 0;
-  transform-origin: right top;
-  transform: scale(0.8);
-  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.header__button:hover, .header__button:focus {
-  background-color: var(--tertiary-dark);
-}
-
-.header__button:hover::after, .header__button:focus::after {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.header__button:active svg {
-  transform: rotate(24deg);
+  justify-content: center;
 }
 
 .input {
@@ -257,6 +163,13 @@ svg {
 .input__input {
   width: calc(100% - (16px * 2));
   margin: 1.5rem 1rem 0.5rem;
+  font-size: 1rem;
+  color: var(--primary-text-on-light);
+}
+
+.input__input__label {
+  width: calc(100% - (16px * 2));
+  margin: 0.5rem;
   font-size: 1rem;
   color: var(--primary-text-on-light);
 }
@@ -293,6 +206,10 @@ svg {
   cursor: pointer;
 }
 
+.input__input__color {
+  top: 0;
+}
+
 .input__color--foreground {
   background-color: var(--output-foreground);
 }
@@ -305,12 +222,13 @@ svg {
   will-change: border-color;
   position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100%;
   max-width: 30rem;
-  margin: 0.5rem 0 0rem;
+  /* margin: 0.5rem 0 0rem; */
+  margin: 0;
   background-color: #f0f0f0;
   border: 1px solid var(--border-color-on-light);
   border-radius: 0.25rem;
@@ -345,7 +263,7 @@ svg {
   display: flex;
   align-items: center;
   font-weight: 300;
-  padding: 0.5rem 1.5rem;
+  padding: 0;
 }
 
 .warning__text-icon {
@@ -359,7 +277,7 @@ svg {
 }
 
 .wcag p {
-  line-height: 1.5;
+  line-height: 1;
 }
 
 .wcag__level {
