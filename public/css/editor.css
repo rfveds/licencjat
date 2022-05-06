@@ -12,12 +12,12 @@ body {
     grid-template-columns: 160px 1fr;
 }
 
-.colors__settings{
+.colors__settings {
     display: flex;
     flex-direction: column;
 }
 
-.colors--value{
+.colors--value {
     color: black;
     display: inline-block;
 }
@@ -33,5 +33,3 @@ body {
 .main-content {
     grid-area: m;
 }
-
-
