@@ -2,7 +2,8 @@
     Navbar.
 #}
 
-<ul class="nav justify-content-start">
+<ul class="nav justify-content-start ml-4 mt-3">
+
 	<li class="nav-item">
 		<a href="{{ url('homepage') }}" class="navbar-brand">
 			{{ 'title_app'|trans }}
@@ -15,7 +16,8 @@
 		</a>
 	</li>
 	{% endif %}
-	<li class="nav-item">
+
+	<li class="nav-item ml-auto">
 		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 			<a class="nav-link" href="{{ url('app_logout') }}" class="">
 				{{ 'action_logout'|trans }}
@@ -38,4 +40,6 @@
 			</a>
 		</li>
 	{% endif %}
-</li></ul>
+	</li>
+
+</ul>

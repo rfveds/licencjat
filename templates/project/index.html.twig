@@ -6,16 +6,25 @@
 
 {% block body %}
 	{% for project in projects %}
-		{{ project.title }}
-		<a href="{{ url('project_show', {id: project.id}) }}" title="{{ 'action_view'|trans }}">
-			{{ 'action_view'|trans }}
-		</a>
-		<a href="{{ url('project_edit', {id: project.id}) }}" title="{{ 'action_edit'|trans }}">
-			{{ 'action_edit'|trans }}
-		</a>
-		<a href="{{ url('project_delete', {id: project.id}) }}" title="{{ 'action_delete'|trans }}">
-			{{ 'action_delete'|trans }}
-		</a>
-		<br>
+
+		<div class="card mt-5" style="width: 18rem;">
+			<div class="card-body">
+
+				<h5 class="card-title">
+					{{ project.title }}
+				</h5>
+				<a class="card-link" href="{{ url('project_show', {id: project.id}) }}" title="{{ 'action_view'|trans }}">
+					{{ 'action_view'|trans }}
+				</a>
+				<a class="card-link" href="{{ url('project_edit', {id: project.id}) }}" title="{{ 'action_edit'|trans }}">
+					{{ 'action_edit'|trans }}
+				</a>
+				<a class="card-link" href="{{ url('project_delete', {id: project.id}) }}" title="{{ 'action_delete'|trans }}">
+					{{ 'action_delete'|trans }}
+				</a>
+			</div>
+		</div>
+
+
 	{% endfor %}
 {% endblock %}

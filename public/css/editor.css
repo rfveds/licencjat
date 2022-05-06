@@ -1,5 +1,90 @@
-body {
+:root {
+    --primary: #263238;
+    --primary-light: #4F5B62;
+    --primary-dark: #000A12;
+    --secondary: #DD2C00;
+    --secondary-light: #FF6434;
+    --secondary-dark: #A30000;
+    --tertiary: #2962FF;
+    --tertiary-light: #768FFF;
+    --tertiary-dark: #0039CB;
+    --primary-text-on-primary: white;
+    --primary-text-on-primary-light: white;
+    --primary-text-on-primary-dark: white;
+    --primary-text-on-secondary: white;
+    --primary-text-on-secondary-light: black;
+    --primary-text-on-secondary-dark: white;
+    --primary-text-on-tertiary: white;
+    --primary-text-on-tertiary-light: black;
+    --primary-text-on-tertiary-dark: white;
+    --primary-text-on-light: black;
+    --primary-text-on-dark: white;
+    --secondary-text-on-primary: rgba(255, 255, 255, 0.5);
+    --secondary-text-on-primary-light: rgba(255, 255, 255, 0.71);
+    --secondary-text-on-primary-dark: rgba(255, 255, 255, 0.45);
+    --secondary-text-on-secondary: rgba(255, 255, 255, 0.97);
+    --secondary-text-on-secondary-light: rgba(0, 0, 0, 0.68);
+    --secondary-text-on-secondary-dark: rgba(255, 255, 255, 0.71);
+    --secondary-text-on-tertiary: rgba(255, 255, 255, 0.94);
+    --secondary-text-on-tertiary-light: rgba(0, 0, 0, 0.68);
+    --secondary-text-on-tertiary-dark: rgba(255, 255, 255, 0.66);
+    --secondary-text-on-light: rgba(0, 0, 0, 0.56);
+    --secondary-text-on-dark: rgba(255, 255, 255, 0.57);
+    --disabled-text-on-primary: rgba(255, 255, 255, 0.35);
+    --disabled-text-on-primary-light: rgba(255, 255, 255, 0.49);
+    --disabled-text-on-primary-dark: rgba(255, 255, 255, 0.34);
+    --disabled-text-on-secondary: rgba(255, 255, 255, 0.72);
+    --disabled-text-on-secondary-light: rgba(0, 0, 0, 0.5);
+    --disabled-text-on-secondary-dark: rgba(255, 255, 255, 0.53);
+    --disabled-text-on-tertiary: rgba(255, 255, 255, 0.65);
+    --disabled-text-on-tertiary-light: rgba(0, 0, 0, 0.5);
+    --disabled-text-on-tertiary-dark: rgba(255, 255, 255, 0.48);
+    --disabled-text-on-light: rgba(0, 0, 0, 0.43);
+    --disabled-text-on-dark: rgba(255, 255, 255, 0.39);
+    --error-text-on-light: #b71c1c;
+    --error-text-on-dark: #ef9a9a;
+    --border-color-on-light: rgba(0, 0, 0, 0.12);
+    --border-color-on-dark: rgba(255, 255, 255, 0.12);
+    --border-width-small: 0.0625rem;
+    --border-width-medium: 0.1875rem;
+    --border-secondary-color-on-light: rgba(0, 0, 0, 0.38);
+    --border-secondary-color-on-dark: rgba(255, 255, 255, 0.5);
+    --border-on-light: rgba(0, 0, 0, 0.12) solid 0.0625rem;
+    --border-on-dark: rgba(255, 255, 255, 0.12) solid 0.0625rem;
+    --primary-background: #EEEEEE;
+    --secondary-background: #424242;
+    --root-font-size: 16;
+}
+
+:root {
+    font-size: calc(var(--root-font-size) * 1px);
+}
+
+:root {
+    --output-background: #424242;
+    --output-foreground: #d1f3cd;
+}
+
+a {
+    will-change: background-color;
+    display: inline-block;
+    padding: 0.125rem 0.25rem;
+    color: var(--tertiary-dark);
+    background-color: rgba(227, 242, 253, 0);
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover, a:focus {
+    background-color: #e3f2fd;
+}
+
+
+body, html {
     margin: 0;
+    width: 100vw;
+    height: 100vh;
+    line-height: 1;
+    font-family: "Operator Mono", "Inconsolata", "Roboto Mono", monospace;
 }
 
 .wrapper {
@@ -9,27 +94,143 @@ body {
     grid-template-areas:
         "s m";
     grid-template-rows: 1fr;
-    grid-template-columns: 160px 1fr;
-}
-
-.colors__settings {
-    display: flex;
-    flex-direction: column;
-}
-
-.colors--value {
-    color: black;
-    display: inline-block;
+    grid-template-columns: 159px 1fr;
 }
 
 .settings {
-    background-color: rgb(204, 204, 204);
+    background-color: white;
     grid-area: s;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
+    border-right: 1px solid black;
 }
 
 .main-content {
     grid-area: m;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.header__text {
+    margin-top: 1rem;
+}
+
+.header__text:nth-child(2) {
+    margin-top: 0.2rem;
+    margin-bottom: 0.25rem;
+    border: 1px solid var(--border-color-on-light);
+}
+
+.container {
+    /* position: relative; */
+    width: 100%;
+    max-width: 25rem;
+    /* margin: 0 0.5rem; */
+    background: white;
+    /* border-radius: 0.25rem;
+    border: 1px solid var(--primary); */
+    padding: 0;
+}
+
+.container__header {
+    padding-top: 0.5rem;
+}
+
+.container__body:first-of-type {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container__body:not(:first-of-type) {
+    padding: 0;
+}
+
+.container__footer {
+    padding: 0.5rem 1.5rem;
+    border-top: 1px solid var(--primary);
+    border-radius: 0 0 0.1875rem 0.1875rem;
+}
+
+h1 {
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    font-family: "Roboto Mono";
+}
+
+input[type=color] {
+    font-size: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    /* border-radius: 50%; */
+}
+
+input[type=submit] {
+    will-change: background-color;
+    display: inline-block;
+    margin: 0.25rem 0.25rem;
+    padding: 0.125rem 0.25rem;
+    color: var(--tertiary-dark);
+    background-color: rgba(227, 242, 253, 0);
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 0.2rem;
+    margin-bottom: 0.25rem;
+    border: 1px solid var(--border-color-on-light);
+    font-family: "Operator Mono", "Inconsolata", "Roboto Mono", monospace;
+}
+
+input[type=submit]:hover, input[type=submit]:focus {
+    background-color: #e3f2fd;
+}
+
+input[type=color]::-webkit-color-swatch-wrapper {
+    display: block;
+    padding: 0;
+}
+
+input[type=color]::-webkit-color-swatch {
+    border: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: currentColor;
+}
+
+[hidden] {
+    display: none;
 }

@@ -1,0 +1,40 @@
+<ul class="nav">
+	<li class="nav-item">
+		<a class="nav-link" href="{{ url('homepage') }}">
+        	{{ 'title_app'|trans }}
+        </a>
+	</li>
+</ul>  
+
+<form action="{{ url('project_colors_edit', {'id': project.id}) }}" method="GET" class="container">
+    <header class="container__header header">
+    <h1 class="header__text">Wygenerowana paleta</h1>
+    <a class="header__text" href="{{ url('project_colors_generate', {id: project.id}) }}">
+			{{ 'label_generate_colors'|trans }}
+    </a>
+  </header>
+    <section class="container__body">
+        <div class="input input__form--container">
+            <p class="input__form__label">{{ project.rgbToHex(project.lightShades) }}</p>
+            <input class="input__form__color input__input input__input__color" type="color" value="{{ project.rgbToHex(project.lightShades) }}" name="lightShades"></input>
+        </div>
+        <div class="input input__form--container">
+            <p class="input__form__label">{{ project.rgbToHex(project.lightAccent) }}</p>
+            <input class="input__form__color input__input input__input__color" type="color" value="{{ project.rgbToHex(project.lightAccent) }}" name="lightAccent"></input>
+        </div>
+        <div class="input input__form--container">
+            <p class="input__form__label">{{ project.rgbToHex(project.baseColor) }}</p>
+            <input class="input__form__color input__input input__input__color" type="color" value="{{ project.rgbToHex(project.baseColor) }}" name="baseColor"></input>
+        </div>
+        <div class="input input__form--container">
+            <p class="input__form__label">{{ project.rgbToHex(project.darkAccent) }}</p>
+            <input class="input__form__color input__input input__input__color" type="color" value="{{ project.rgbToHex(project.darkAccent) }}" name="darkAccent"></input>
+        </div >
+        <div class="input input__form--container">
+            <p class="input__form__label">{{ project.rgbToHex(project.darkShades) }}</p>
+            <input class="input__form__color input__input input__input__color" type="color" value="{{ project.rgbToHex(project.darkShades) }}" name="darkShades"></input>
+        </div>
+        <input type="submit" value="Aktualizuj">
+    </section>
+    
+</form>   

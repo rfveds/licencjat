@@ -6,14 +6,16 @@
 
 {% block body %}
 
-	<header id="main-page__header">
+	<header class="main-page__header">
 		<h1>Aplikacja wspomagająca dobór kolorystyki stron internetowych</h1>
 	</header>
 
 	{% if is_granted('ROLE_USER') %}
-		<li class="">
-			<a class="" href="{{ url('project_create') }}">Stwórz projekt</a>
-		</li>
+	<div class="main-page__container">
+		<div class="main-page__content">
+			<a href="{{ url('project_create') }}">Stwórz projekt</a>
+		</div>
+	</div>
 	{% endif %}
 
 

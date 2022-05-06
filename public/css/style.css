@@ -1,7 +1,29 @@
-
-#main-page__header {
+body, html {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    line-height: 1;
+    font-family: "Operator Mono", "Inconsolata", "Roboto Mono", monospace;
+}
+.main-page__header {
     align-items: center;
     display: flex;
     justify-content: center;
     margin-top: 10vh;
+}
+
+
+.main-page__container {
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.main-page__content {
+    height: 20%;
+    width: 20%;
+    text-align: center;
 }
