@@ -7,16 +7,60 @@
 {% block body %}
 
 	<header class="main-page__header">
+
 		<h1>Aplikacja wspomagająca dobór kolorystyki stron internetowych</h1>
+
+		{% if is_granted('ROLE_USER') %}
+			<a href="{{ url('project_create') }}">Stwórz projekt</a>
+		{% else %}
+			<p>
+				<a href="{{ url('app_login') }}">{{ 'action_login'|trans }}</a>, aby stworzyć projekt.
+			</p>
+		{% endif %}
+
 	</header>
 
-	{% if is_granted('ROLE_USER') %}
+
 	<div class="main-page__container">
 		<div class="main-page__content">
-			<a href="{{ url('project_create') }}">Stwórz projekt</a>
+			<svg class="logo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1100.25 150">
+				<defs>
+					<style>
+						.cls-1 {
+							fill: #29abe2;
+						}
+						.cls-2 {
+							fill: #2cabe5;
+						}
+						.cls-3 {
+							fill: #2faae7;
+						}
+						.cls-4 {
+							fill: #32aaea;
+						}
+						.cls-5 {
+							fill: #36aaed;
+						}
+						.cls-6 {
+							fill: #39aaf0;
+						}
+						.cls-7 {
+							fill: #3ca9f2;
+						}
+						.cls-8 {
+							fill: #3fa9f5;
+						}
+						.cls-9 {
+							fill: none;
+						}
+					</style>
+				</defs>
+				<g id="Layer_2" data-name="Layer 2">
+					<g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="0 147.45 0.33 12.23 123.6 14.55 123.27 149.77 0 147.45"/><path class="cls-2" d="M157.18,137.1c0,5.92-4.51-105.19-10.43-105.19s94.94-2.81,94.94-8.72,4.51,105.18,10.43,105.18S157.18,131.18,157.18,137.1Z"/><path class="cls-3" d="M314.36,126.75c0,11.83-9.36-75.16-21.19-75.16s66.62-7.93,66.62-19.77S369.14,107,381,107,314.36,114.92,314.36,126.75Z"/><path class="cls-4" d="M471.53,116.4c0,17.75-14.2-45.13-31.95-45.13s38.3-13.06,38.3-30.81,14.2,45.12,31.95,45.12S471.53,98.65,471.53,116.4Z"/><path class="cls-5" d="M628.71,106.05c0,23.67-19-15.09-42.71-15.09s10-18.2,10-41.87,19,15.1,42.71,15.1S628.71,82.38,628.71,106.05Z"/><path class="cls-6" d="M785.89,95.7c0,29.59-23.89,14.94-53.47,14.94s-18.36-23.32-18.36-52.91S738,42.79,767.54,42.79,785.89,66.11,785.89,95.7Z"/><path class="cls-7" d="M943.07,85.35c0,35.5-28.73,45-64.24,45s-46.67-28.45-46.67-64,28.73-45,64.23-45S943.07,49.85,943.07,85.35Z"/><path class="cls-8" d="M1100.25,75a75,75,0,1,1-75-75A75,75,0,0,1,1100.25,75Z"/><line class="cls-9" x1="1025.25" y1="75" x2="168.8" y2="78"/></g>
+				</g>
+			</svg>
 		</div>
 	</div>
-	{% endif %}
 
 
 {% endblock %}

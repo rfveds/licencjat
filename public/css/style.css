@@ -4,16 +4,37 @@ body, html {
     line-height: 1;
     font-family: "Operator Mono", "Inconsolata", "Roboto Mono", monospace;
 }
+
 .main-page__header {
     align-items: center;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     margin-top: 10vh;
+    margin-bottom: 10vh;
 }
 
+.main-page__header > a {
+    font-size: 2rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    border: 1px solid black;
+}
+
+.main-page__header > a:hover {
+    border: none;
+    background-color: #3792d3;
+    color: azure;
+}
+
+.main-page__header p {
+    font-size: 2rem;
+    margin-top: 2rem;
+    padding: 2rem;
+}
 
 .main-page__container {
-    height: 60vh;
+    height: 40vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -22,7 +43,11 @@ body, html {
 }
 
 .main-page__content {
-    height: 20%;
-    width: 20%;
+    height: 80%;
+    width: 100%;
     text-align: center;
+}
+
+.logo {
+    width: 80%;
 }
