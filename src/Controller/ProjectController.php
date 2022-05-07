@@ -255,12 +255,20 @@ class ProjectController extends AbstractController
 
         $this->projectService->generate($project);
 
-        return $this->render(
-            'editor/product.html.twig',
-            [
-                'project' => $project,
-            ]
-        );
+        if ($project->getCategory()->getTitle() == 'Produkt') {
+
+            return $this->render(
+                'editor/product.html.twig',
+                ['project' => $project]
+            );
+        }
+        if ($project->getCategory()->getTitle() == 'Firma') {
+
+            return $this->render(
+                'editor/company.html.twig',
+                ['project' => $project]
+            );
+        }
     }
 
     /**
@@ -294,11 +302,19 @@ class ProjectController extends AbstractController
 
         $this->projectService->editColors($project, $data);
 
-        return $this->render(
-            'editor/product.html.twig',
-            [
-                'project' => $project,
-            ]
-        );
+        if ($project->getCategory()->getTitle() == 'Produkt') {
+
+            return $this->render(
+                'editor/product.html.twig',
+                ['project' => $project]
+            );
+        }
+        if ($project->getCategory()->getTitle() == 'Firma') {
+
+            return $this->render(
+                'editor/company.html.twig',
+                ['project' => $project]
+            );
+        }
     }
 }
