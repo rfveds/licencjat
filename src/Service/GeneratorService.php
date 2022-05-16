@@ -43,6 +43,8 @@ class GeneratorService
         $black = [];
         $white = [];
         $grey = [];
+        $pink = [];
+
 
         foreach ($tags as $t) {
             if ($t['reference'] == 'red') {
@@ -75,6 +77,9 @@ class GeneratorService
             if ($t['reference'] == 'grey') {
                 array_push($grey, $t['name']);
             }
+            if ($t['reference'] == 'pink') {
+                array_push($pink, $t['name']);
+            }
         }
 
         //tablica z wartosciami kolorow
@@ -88,6 +93,7 @@ class GeneratorService
         $data[] = array('color' => 'black',    'value' => 0, 'hex' => '160f05');
         $data[] = array('color' => 'white',    'value' => 0, 'hex' => 'fffbfa');
         $data[] = array('color' => 'grey',     'value' => 0, 'hex' => '515150');
+        $data[] = array('color' => 'pink',     'value' => 0, 'hex' => 'E06287');
 
 
         // sprawdzenie z jakim kolroem powiązane są słowa
@@ -158,6 +164,13 @@ class GeneratorService
             if (in_array($input[$j], $grey)) {
                 for ($i = 0; $i < sizeof($data); $i++) {
                     if ($data[$i]['color'] == 'grey') {
+                        $data[$i]['value']++;
+                    }
+                }
+            }
+            if (in_array($input[$j], $pink)) {
+                for ($i = 0; $i < sizeof($data); $i++) {
+                    if ($data[$i]['color'] == 'pink') {
                         $data[$i]['value']++;
                     }
                 }

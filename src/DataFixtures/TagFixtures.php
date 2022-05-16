@@ -43,10 +43,7 @@ class TagFixtures extends AbstractBaseFixtures
     {
         return
             [
-                [
-                    'name' => 'energia',
-                    'reference' => 'red'
-                ],
+
                 [
                     'name' => 'ekscytacja',
                     'reference' => 'red'
@@ -56,7 +53,11 @@ class TagFixtures extends AbstractBaseFixtures
                     'reference' => 'red'
                 ],
                 [
-                    'name' => 'dominacja',
+                    'name' => 'agresja',
+                    'reference' => 'red'
+                ],
+                [
+                    'name' => 'miłość',
                     'reference' => 'red'
                 ],
                 [
@@ -73,6 +74,10 @@ class TagFixtures extends AbstractBaseFixtures
                 ],
                 [
                     'name' => 'radość',
+                    'reference' => 'yellow'
+                ],
+                [
+                    'name' => 'energia',
                     'reference' => 'yellow'
                 ],
                 [
@@ -96,6 +101,10 @@ class TagFixtures extends AbstractBaseFixtures
                     'reference' => 'green'
                 ],
                 [
+                    'name' => 'nadzieja',
+                    'reference' => 'green'
+                ],
+                [
                     'name' => 'natura',
                     'reference' => 'green'
                 ],
@@ -104,12 +113,12 @@ class TagFixtures extends AbstractBaseFixtures
                     'reference' => 'green'
                 ],
                 [
-                    'name' => 'zysk',
+                    'name' => 'pieniądze',
                     'reference' => 'green'
                 ],
                 [
-                    'name' => 'kobiecość',
-                    'reference' => 'purple'
+                    'name' => 'spokój',
+                    'reference' => 'green'
                 ],
                 [
                     'name' => 'wyrafinowanie',
@@ -156,6 +165,22 @@ class TagFixtures extends AbstractBaseFixtures
                     'reference' => 'brown'
                 ],
                 [
+                    'name' => 'uroda',
+                    'reference' => 'pink'
+                ],
+                [
+                    'name' => 'dzieciństwo',
+                    'reference' => 'pink'
+                ],
+                [
+                    'name' => 'kobiecość',
+                    'reference' => 'pink'
+                ],
+                [
+                    'name' => 'życzliwość',
+                    'reference' => 'pink'
+                ],
+                [
                     'name' => 'wyrafinowanie',
                     'reference' => 'black'
                 ],
@@ -165,6 +190,10 @@ class TagFixtures extends AbstractBaseFixtures
                 ],
                 [
                     'name' => 'powaga',
+                    'reference' => 'black'
+                ],
+                [
+                    'name' => 'elegancja',
                     'reference' => 'black'
                 ],
                 [

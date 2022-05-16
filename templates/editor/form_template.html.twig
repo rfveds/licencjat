@@ -4,6 +4,11 @@
         	{{ 'title_app'|trans }}
         </a>
 	</li>
+    <li class="nav-item">
+		<a class="nav-link" href="{{ url('project_index') }}" >
+			{{ 'title_project_list'|trans }}
+    	</a>
+	</li>
 </ul>  
 
 <form action="{{ url('project_colors_edit', {'id': project.id}) }}" method="GET" class="container">

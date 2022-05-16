@@ -50,12 +50,14 @@
 }
 
 @media (min-width: 1440px) {
-    .logo svg {
-        left: 7%;
-    }
+
     .logo {
         font-size: 72px;
         padding-left: 12%;
         padding-top: 3%;
+    }
+
+    .logo p {
+        padding-left: 5%;
     }
 }

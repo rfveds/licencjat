@@ -85,6 +85,10 @@ class ColorFixtures extends AbstractBaseFixtures
                     'name' => 'grey',
                     'reference' => 'grey'
                 ],
+                [
+                    'name' => 'pink',
+                    'reference' => 'pink'
+                ],
             ];
     }
 
