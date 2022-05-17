@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'title_app'|trans }}
+{% endblock %}
+
+{% block body %}
+
+	<header class="main-page__header mb-2">
+		<h1>Jak działa aplikacja?</h1>
+	</header>
+
+
+	<div class="main-page__container">
+		<div class="main-page__content about">
+
+			<h2>Kolor w procesie projektowania aplikacji internetowej</h2>
+
+			<p class="ml-2 mt-1">Wybranie palety kolorów to jedno z najważniejszych zadań przy projektowaniu serwisu internetowego. Generator palety kolorów ułatwia i automatyzuje ten proces.</p>
+
+			<h3>Jak działa generator palety?</h3>
+
+			<h4 class="ml-3 mb-0">Skojarzenia</h4>
+
+			<p class="ml-2 mt-1">Użytkownik serwisu wypełnia formularz, w którym musi zaznaczyć cztery słowa-skojarzenia, które najlepiej pasują do charakterystyki strony, której projekt chce wykonać.</p>
+
+			<h4 class="ml-3 mb-0">Wybór układu strony</h4>
+
+			<p class="ml-2 mt-1">Aplikacja koncentruje się na procesie wyboru koloru, dlatego projekty są proste i mają służyć tylko jako podpowiedź przy dalszym tworzeniu aplikacji internetowej.</p>
+
+			<p class="ml-2 mb-0">Użytkownik ma do wyboru dwa podstawowe projekty takie jak:</p>
+
+			<ul>
+				<li>
+					strona reklamująca produkt,
+				</li>
+				<li>
+					strona reklamująca firmę,
+				</li>
+				<li>
+					strona z wiadomościami,
+				</li>
+				<li>
+					blog.
+				</li>
+			</ul>
+
+
+			<h4 class="ml-3 mb-0">Gotowy projekt</h4>
+
+			<p class="ml-2 mt-1">Generator na podstawie wprowadzonych danych wybierze kolor główny, dobierze kolory uzupełniające, zastosuje paletę do projektu. Użytkownik zostanie przekierowany na stronę wyświetlającą gotowy projekt. Użytkownik ma dodatkowo możliwość sprawdzenia kontrastu między elementami strony, indywidualnego dostosowania zaproponowanych kolorów i zapisania projektu.</p>
+
+		</div>
+
+	</div>
+
+
+{% endblock %}

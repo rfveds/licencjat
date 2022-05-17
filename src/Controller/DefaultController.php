@@ -33,4 +33,21 @@ class DefaultController extends AbstractController
             'home/index.html.twig',
         );
     }
+
+    /**
+     * About.
+     *
+     * @Route(
+     *     "/about",
+     *     name="about",
+     * )
+     *
+     * @return \Symfony\Component\HttpFoundation\Response HTTP Response
+     */
+    public function about(): Response
+    {
+        return $this->render(
+            'home/about.html.twig',
+        );
+    }
 }

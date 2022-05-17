@@ -40,14 +40,23 @@ body, html {
     justify-content: center;
     align-items: center;
     font-size: 2rem;
+    flex-direction: column;
 }
 
 .main-page__content {
     height: 80%;
     width: 100%;
-    text-align: center;
+}
+
+.main-page__content p, li{
+    text-align: start;
+    font-size: medium;
 }
 
 .logo {
     width: 80%;
+}
+
+.about{
+    width: 55%;
 }

@@ -6,6 +6,10 @@
                 <source>action_view</source>
                 <target>View</target>
             </trans-unit>
+            <trans-unit id="title_about">
+                <source>title_about</source>
+                <target>How it works?</target>
+            </trans-unit>
             <trans-unit id="action_back_to_list">
                 <source>action_back_to_list</source>
                 <target>Back</target>

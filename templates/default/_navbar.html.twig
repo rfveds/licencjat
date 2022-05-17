@@ -17,6 +17,12 @@
 	</li>
 	{% endif %}
 
+	<li class="nav-item ml-4">
+		<a href="{{ url('about') }}" class="navbar-brand">
+			{{ 'title_about'|trans }}
+		</a>
+	</li>
+
 	<li class="nav-item ml-auto">
 		{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 			<a class="nav-link" href="{{ url('app_logout') }}" class="">
