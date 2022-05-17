@@ -50,4 +50,21 @@ class DefaultController extends AbstractController
             'home/about.html.twig',
         );
     }
+
+    /**
+     * Info.
+     *
+     * @Route(
+     *     "/info",
+     *     name="info",
+     * )
+     *
+     * @return \Symfony\Component\HttpFoundation\Response HTTP Response
+     */
+    public function info(): Response
+    {
+        return $this->render(
+            'home/info.html.twig',
+        );
+    }
 }
