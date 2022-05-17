@@ -23,13 +23,13 @@
 <form action="{{ url('project_colors_edit', {'id': project.id}) }}" method="GET" class="container">
 
   <section class="container__body">
-    <div class="input input--container">
+    <div class="input input--container mb-0">
       <input type="text" id="foreground" placeholder="&nbsp;" name="foreground" value="{{ project.rgbToHex(project.lightShades) }}" spellcheck="false" class="input__input" js-foreground name="lightShades">
       <label for="foreground" class="input__label">Tekst:</label>
       <p class="input__error" js-foreground-err>Nieprawidłowy kolor</p>
       <input js-foreground-color-input class="input__color input__color--foreground" type="color" aria-hidden="true" name="lightShades">
     </div>
-    <div class="input input--container">
+    <div class="input input--container mb-0">
       <input type="text" id="background" placeholder="&nbsp;" name="background" value="{{ project.rgbToHex(project.darkShades) }}" spellcheck="false" class="input__input" js-background name="darkShades">
       <label for="background" class="input__label">Tło:</label>
       <p class="input__error" js-background-err>Nieprawidłowy kolor</p>
@@ -49,8 +49,7 @@
             <input class="input__form__color input__input input__input__color" type="color" value="{{ project.rgbToHex(project.darkAccent) }}" name="darkAccent"></input>
         </div >
     </div>
-
-    <input type="submit" value="Zapisz">
+    <input class="mt-1 mb-2" type="submit" value="Zapisz">
   </section>
   
   </form>   
