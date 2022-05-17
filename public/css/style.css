@@ -24,6 +24,7 @@ body, html {
 .main-page__header > a:hover {
     border: none;
     background-color: #3792d3;
+    border: 1px solid #3792d3;
     color: azure;
 }
 
