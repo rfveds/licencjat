@@ -5,6 +5,11 @@
 {% endblock %}
 
 {% block body %}
+
+	{% if projects is empty %}
+			<a href="{{ url('project_create') }}">Stwórz projekt</a>
+	{% else %}
+
 	{% for project in projects %}
 
 		<div class="card mt-5" style="width: 18rem;">
@@ -25,6 +30,8 @@
 			</div>
 		</div>
 
-
 	{% endfor %}
+	
+	{% endif %}
+
 {% endblock %}
