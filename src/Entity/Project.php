@@ -91,6 +91,12 @@ class Project
      */
     private $darkShades;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="projects")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
+
 
     /**
      * Project constructor.
@@ -263,5 +269,17 @@ class Project
         array_unshift($array, array_pop($matches[0]));
 
         return $array;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
     }
 }

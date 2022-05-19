@@ -9,13 +9,18 @@ namespace App\Service;
 use App\Entity\Project;
 use App\Repository\ProjectRepository;
 use App\Service\GeneratorService;
-
+use Symfony\Component\Security\Core\Security;
 
 /**
  * Class ProjectService.
  */
 class ProjectService
 {
+    /**
+     * Security.
+     */
+    private Security $security;
+
     /**
      * Project repository.
      */
@@ -32,10 +37,13 @@ class ProjectService
      *
      * @param \App\Repository\ProjectRepository       $projectRepository Project repository
      */
-    public function __construct(ProjectRepository $projectRepository, GeneratorService $generatorService)
+    public function __construct(ProjectRepository $projectRepository, GeneratorService $generatorService, Security $security)
     {
         $this->projectRepository = $projectRepository;
         $this->generatorService = $generatorService;
+        // Avoid calling getUser() in the constructor: auth may not
+        // be complete yet. Instead, store the entire Security object.
+        $this->security = $security;
     }
 
     /**
@@ -48,6 +56,10 @@ class ProjectService
      */
     public function save(Project $project, $tags): void
     {
+
+        $user = $this->security->getUser();
+        $project->setUser($user);
+
         //hex
         $baseColor = $this->generatorService->check_color($tags)['hex'];
 
