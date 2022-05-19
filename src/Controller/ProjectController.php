@@ -17,6 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
 
 /**
  * Class ProjectController.
@@ -25,6 +26,12 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class ProjectController extends AbstractController
 {
+    /**
+     * Security.
+     */
+    private Security $security;
+
+
     /**
      * Project service.
      */
@@ -40,10 +47,13 @@ class ProjectController extends AbstractController
      *
      * @param \App\Service\ProjectService $projectService Project service
      */
-    public function __construct(ProjectService $projectService, ProjectRepository $projectRepository)
+    public function __construct(ProjectService $projectService, ProjectRepository $projectRepository, Security $security)
     {
         $this->projectService = $projectService;
         $this->projectRepository = $projectRepository;
+                // Avoid calling getUser() in the constructor: auth may not
+        // be complete yet. Instead, store the entire Security object.
+        $this->security = $security;
     }
 
     /**
@@ -61,7 +71,8 @@ class ProjectController extends AbstractController
     public function index(Request $request): Response
     {
 
-        $projects = $this->projectRepository->findAll();
+        $user = $this->security->getUser();
+        $projects = $this->projectRepository->findBy(['user' => $user]);
 
         return $this->render(
             'project/index.html.twig',

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * User controller.
  */
@@ -58,6 +59,7 @@ class UserController extends AbstractController
     {
         $user = $this->security->getUser();
 
+
         return $this->render(
             'user/show.html.twig',
             ['user' => $user]
@@ -101,8 +103,10 @@ class UserController extends AbstractController
 
         return $this->render(
             'user/edit.html.twig',
-            ['form' => $form->createView(),
-                'user' => $user, ]
+            [
+                'form' => $form->createView(),
+                'user' => $user,
+            ]
         );
     }
 
@@ -138,8 +142,10 @@ class UserController extends AbstractController
 
         return $this->render(
             'user/editEmail.html.twig',
-            ['form' => $form->createView(),
-                'user' => $user, ]
+            [
+                'form' => $form->createView(),
+                'user' => $user,
+            ]
         );
     }
 }
