@@ -4,26 +4,26 @@
 
 <ul class="nav justify-content-start ml-4 mt-3">
 
-	<li class="nav-item">
+	<li class="nav-item pl-2">
 		<a href="{{ url('homepage') }}" class="navbar-brand">
 			{{ 'title_app'|trans }}
 		</a>
 	</li>
 	{% if is_granted('ROLE_USER') %}
 		<li class="nav-item">
-			<a href="{{ url('project_index') }}" class="navbar-brand">
+			<a href="{{ url('project_index') }}" class="navbar-brand pl-2">
 				{{ 'title_project_list'|trans }}
 			</a>
 		</li>
 	{% endif %}
 
-	<li class="nav-item ml-4">
+	<li class="nav-item ml-4 pl-2">
 		<a href="{{ url('about') }}" class="navbar-brand">
 			{{ 'title_about'|trans }}
 		</a>
 	</li>
 
-	<li class="nav-item ml-4">
+	<li class="nav-item ml-4 pl-2">
 		<a href="{{ url('info') }}" class="navbar-brand">
 			{{ 'title_info'|trans }}
 		</a>
