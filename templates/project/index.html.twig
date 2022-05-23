@@ -6,9 +6,7 @@
 
 {% block body %}
 
-	{% if projects is empty %}
-			<a href="{{ url('project_create') }}">Stwórz projekt</a>
-	{% else %}
+	<a href="{{ url('project_create') }}" class="btn btn-primary mt-4">Stwórz projekt</a>
 
 	{% for project in projects %}
 
@@ -31,7 +29,5 @@
 		</div>
 
 	{% endfor %}
-	
-	{% endif %}
 
 {% endblock %}

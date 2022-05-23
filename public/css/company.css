@@ -7,7 +7,6 @@
     height: 2%;
     width: 15%;
     align-self: flex-end;
-
 }
 
 .element--light {
@@ -30,7 +29,6 @@
     flex-direction: row;
 }
 
-
 .center {
     padding-top: 5%;
     height: 80%;
@@ -51,7 +49,6 @@
     font-size: 18px;
     text-align: center;
 }
-
 
 .bottom {
     height: 10%;
