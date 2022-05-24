@@ -28,6 +28,14 @@ class CategoryFixtures extends AbstractBaseFixtures
         $category_company->setTitle('Firma');
         $manager->persist($category_company);
 
+        $category_blog = new Category();
+        $category_blog->setTitle('Blog');
+        $manager->persist($category_blog);
+
+        $category_news = new Category();
+        $category_news->setTitle('Wiadomości');
+        $manager->persist($category_news);
+
         $manager->flush();
     }
 }

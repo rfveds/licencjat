@@ -1,0 +1,95 @@
+.content {
+    height: 100%;
+}
+
+.element--dark {
+    margin-top: 2%;
+    height: 2%;
+    width: 15%;
+    align-self: flex-end;
+}
+
+.element--light {
+    margin-top: 2%;
+    margin-left: 6%;
+    height: 2%;
+    width: 20%;
+}
+
+.element--base {
+    margin-top: 2%;
+    height: 3%;
+    width: 40%;
+    align-self: flex-start;
+}
+
+.top {
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+}
+
+.center {
+    padding-top: 5%;
+    height: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.center h1 {
+    font-size: 28px;
+    text-align: center;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.center h3 {
+    font-size: 18px;
+    text-align: center;
+}
+
+.bottom {
+    height: 10%;
+}
+
+.social {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5%;
+    gap: 2%;
+}
+
+.navigation {
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2%;
+    margin-top: 3%;
+    padding-right: 3%;
+    padding-bottom: 3%;
+    border-bottom: 0.8rem solid;
+}
+
+.photo {
+    height: 55%;
+    width: 95%;
+    background-color: rgb(158, 162, 165);
+    margin-bottom: 4%;
+}
+
+.navigation p {
+    height: 20%;
+}
+
+.navigation p:nth-child(2) {
+    border-bottom: 4px solid;
+}
+
+.logo {
+    width: 30%;
+    font-size: 72px;
+    padding-left: 3%;
+    padding-top: 3%;
+}

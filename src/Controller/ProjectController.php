@@ -153,6 +153,20 @@ class ProjectController extends AbstractController
                 ['project' => $project]
             );
         }
+        if ($project->getCategory()->getTitle() == 'Blog') {
+
+            return $this->render(
+                'editor/blog.html.twig',
+                ['project' => $project]
+            );
+        }
+        if ($project->getCategory()->getTitle() == 'Wiadomości') {
+
+            return $this->render(
+                'editor/news.html.twig',
+                ['project' => $project]
+            );
+        }
     }
 
     /**
@@ -280,6 +294,21 @@ class ProjectController extends AbstractController
                 ['project' => $project]
             );
         }
+
+        if ($project->getCategory()->getTitle() == 'Blog') {
+
+            return $this->render(
+                'editor/blog.html.twig',
+                ['project' => $project]
+            );
+        }
+        if ($project->getCategory()->getTitle() == 'Wiadomości') {
+
+            return $this->render(
+                'editor/news.html.twig',
+                ['project' => $project]
+            );
+        }
     }
 
     /**
@@ -324,6 +353,20 @@ class ProjectController extends AbstractController
 
             return $this->render(
                 'editor/company.html.twig',
+                ['project' => $project]
+            );
+        }
+        if ($project->getCategory()->getTitle() == 'Blog') {
+
+            return $this->render(
+                'editor/blog.html.twig',
+                ['project' => $project]
+            );
+        }
+        if ($project->getCategory()->getTitle() == 'Wiadomości') {
+
+            return $this->render(
+                'editor/news.html.twig',
                 ['project' => $project]
             );
         }
