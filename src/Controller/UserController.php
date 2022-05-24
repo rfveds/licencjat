@@ -87,8 +87,9 @@ class UserController extends AbstractController
      */
     public function edit(Request $request, User $user, UserPasswordHasherInterface $passwordEncoder): Response
     {
-        $form = $this->createForm(UserPasswordType::class, $user, ['method' => 'PUT']);
+        $form = $this->createForm(UserPasswordType::class, $user);
         $form->handleRequest($request);
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             $password = $passwordEncoder->hashPassword($user, $user->getPassword());
@@ -130,14 +131,14 @@ class UserController extends AbstractController
      */
     public function editEmail(Request $request, User $user): Response
     {
-        $form = $this->createForm(UserEmailType::class, $user, ['method' => 'PUT']);
+        $form = $this->createForm(UserEmailType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->userService->save($user);
             $this->addFlash('success', 'message_email_changed_successfully');
 
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('user_show');
         }
 
         return $this->render(
