@@ -10,6 +10,9 @@ body, html {
     color: rgb(255, 255, 255);
 }
 
+.nav-item:hover a, .nav-item:focus a{
+    color: rgb(255, 255, 255);
+}
 
 .main-page__header {
     align-items: center;
@@ -65,5 +68,5 @@ body, html {
 }
 
 .about {
-    width: 55%;
+    width: 65%;
 }
