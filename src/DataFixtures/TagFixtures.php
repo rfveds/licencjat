@@ -57,7 +57,10 @@ class TagFixtures extends AbstractBaseFixtures
                     'reference' => 'red'
                 ],
 
-
+                [
+                    'name' => 'szczęście',
+                    'reference' => 'yellow'
+                ],
                 [
                     'name' => 'optymizm',
                     'reference' => 'yellow'
@@ -143,7 +146,15 @@ class TagFixtures extends AbstractBaseFixtures
                     'name' => 'kobiecość',
                     'reference' => 'pink'
                 ],
-      
+                [
+                    'name' => 'ciepło',
+                    'reference' => 'pink'
+                ],
+                [
+                    'name' => 'miękkość',
+                    'reference' => 'pink'
+                ],
+
 
 
                 [
@@ -176,6 +187,13 @@ class TagFixtures extends AbstractBaseFixtures
 
                 [
                     'name' => 'neutralność',
+                    'reference' => 'grey'
+                ],
+                [
+                    'name' => 'dojrzałość',
+                    'reference' => 'grey'
+                ],              [
+                    'name' => 'bezpieczeństwo',
                     'reference' => 'grey'
                 ],
 
