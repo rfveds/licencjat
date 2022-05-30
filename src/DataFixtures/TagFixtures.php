@@ -49,67 +49,41 @@ class TagFixtures extends AbstractBaseFixtures
                     'reference' => 'red'
                 ],
                 [
-                    'name' => 'piękno',
+                    'name' => 'pobudzenie',
                     'reference' => 'red'
                 ],
                 [
-                    'name' => 'agresja',
+                    'name' => 'aktywność',
                     'reference' => 'red'
                 ],
-                [
-                    'name' => 'miłość',
-                    'reference' => 'red'
-                ],
-                [
-                    'name' => 'ciekawość',
-                    'reference' => 'yellow'
-                ],
+
+
                 [
                     'name' => 'optymizm',
-                    'reference' => 'yellow'
-                ],
-                [
-                    'name' => 'wyobraźnia',
                     'reference' => 'yellow'
                 ],
                 [
                     'name' => 'radość',
                     'reference' => 'yellow'
                 ],
+
+
                 [
-                    'name' => 'energia',
-                    'reference' => 'yellow'
-                ],
-                [
-                    'name' => 'lojalność',
+                    'name' => 'wydajność',
                     'reference' => 'blue'
                 ],
                 [
-                    'name' => 'spokój',
+                    'name' => 'zaufanie',
                     'reference' => 'blue'
                 ],
                 [
                     'name' => 'kompetencje',
                     'reference' => 'blue'
                 ],
-                [
-                    'name' => 'technologia',
-                    'reference' => 'blue'
-                ],
-                [
-                    'name' => 'sukces',
-                    'reference' => 'green'
-                ],
-                [
-                    'name' => 'nadzieja',
-                    'reference' => 'green'
-                ],
+
+
                 [
                     'name' => 'natura',
-                    'reference' => 'green'
-                ],
-                [
-                    'name' => 'balans',
                     'reference' => 'green'
                 ],
                 [
@@ -120,6 +94,8 @@ class TagFixtures extends AbstractBaseFixtures
                     'name' => 'spokój',
                     'reference' => 'green'
                 ],
+
+
                 [
                     'name' => 'wyrafinowanie',
                     'reference' => 'purple'
@@ -129,73 +105,61 @@ class TagFixtures extends AbstractBaseFixtures
                     'reference' => 'purple'
                 ],
                 [
-                    'name' => 'nowoczesność',
+                    'name' => 'jakość',
                     'reference' => 'purple'
                 ],
+
+
                 [
-                    'name' => 'kreatywność',
+                    'name' => 'energwtyczność',
                     'reference' => 'orange'
                 ],
                 [
-                    'name' => 'aktywność',
+                    'name' => 'twórczość',
                     'reference' => 'orange'
                 ],
                 [
                     'name' => 'żywiołowość',
                     'reference' => 'orange'
                 ],
+
+
                 [
-                    'name' => 'unikalność',
-                    'reference' => 'orange'
-                ],
-                [
-                    'name' => 'trwałość',
+                    'name' => 'surowość',
                     'reference' => 'brown'
                 ],
                 [
-                    'name' => 'stabilność',
+                    'name' => 'wsparcie',
                     'reference' => 'brown'
                 ],
                 [
-                    'name' => 'szczerość',
+                    'name' => 'niezawodność',
                     'reference' => 'brown'
                 ],
-                [
-                    'name' => 'tradycja',
-                    'reference' => 'brown'
-                ],
-                [
-                    'name' => 'uroda',
-                    'reference' => 'pink'
-                ],
-                [
-                    'name' => 'dzieciństwo',
-                    'reference' => 'pink'
-                ],
+
+
+
                 [
                     'name' => 'kobiecość',
                     'reference' => 'pink'
                 ],
+      
+
+
                 [
-                    'name' => 'życzliwość',
-                    'reference' => 'pink'
-                ],
-                [
-                    'name' => 'wyrafinowanie',
+                    'name' => 'dostojność',
                     'reference' => 'black'
                 ],
                 [
-                    'name' => 'pewność',
-                    'reference' => 'black'
-                ],
-                [
-                    'name' => 'powaga',
+                    'name' => 'siła',
                     'reference' => 'black'
                 ],
                 [
                     'name' => 'elegancja',
                     'reference' => 'black'
                 ],
+
+
                 [
                     'name' => 'czystość',
                     'reference' => 'white'
@@ -205,25 +169,16 @@ class TagFixtures extends AbstractBaseFixtures
                     'reference' => 'white'
                 ],
                 [
-                    'name' => 'spokój',
-                    'reference' => 'white'
-                ],
-                [
                     'name' => 'niewinność',
                     'reference' => 'white'
                 ],
+
+
                 [
-                    'name' => 'dojrzałość',
+                    'name' => 'neutralność',
                     'reference' => 'grey'
                 ],
-                [
-                    'name' => 'balans',
-                    'reference' => 'grey'
-                ],
-                [
-                    'name' => 'bezpieczenstwo',
-                    'reference' => 'grey'
-                ]
+
             ];
     }
     public function getOrder()
