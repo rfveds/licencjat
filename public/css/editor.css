@@ -234,3 +234,88 @@ svg {
 [hidden] {
     display: none;
 }
+
+@media only screen and (hover: none) and (pointer: coarse) {
+    .main-content {
+        display: none;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .container__body {
+        font-size: 42px;
+        align-items: center;
+    }
+
+    .wcag p {
+        font-size: 3rem !important;
+    }
+
+    .header__text {
+        font-size: 54px;
+        margin: 10px;
+    }
+
+    .header__text:nth-child(2) {
+        font-size: 42px;
+        margin: 20px;
+    }
+
+    input[type='submit'] {
+        margin-top: 20px;
+    }
+
+    input[type=color] {
+        font-size: 0;
+        width: 3rem;
+        height: 3rem;
+        /* border-radius: 50%; */
+    }
+
+    input[type=color]::-webkit-color-swatch {
+        border: none;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .input__form--container p {
+        height: 7rem;
+    }
+
+    .input__label {
+        font-size: 24px;
+    }
+
+    .settings {
+        border: none;
+        width: 100vw;
+    }
+
+    .settings .nav {
+        flex-direction: row;
+    }
+
+    .settings .nav .nav-item {
+        align-items: center;
+        text-align: center;
+        font-size: 64px;
+    }
+
+    #foreground {
+        font-size: 3rem;
+    }
+
+    #background {
+        font-size: 3rem;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+}
