@@ -290,6 +290,12 @@ svg {
         font-size: 24px;
     }
 
+    .nav-item {
+        width: 50% !important;
+        display: flex !important;
+        /* border: solid 2px black; */
+    }
+
     .settings {
         border: none;
         width: 100vw;
