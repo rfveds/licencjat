@@ -68,6 +68,8 @@ class ProjectService
 
         $palette = $this->getPalette($baseColor);
 
+
+
         $project->setLightShades($palette[0]);
         $project->setLightAccent($palette[1]);
         $project->setBaseColor($palette[2]);
@@ -101,6 +103,20 @@ class ProjectService
         $project->setBaseColor($palette[2]);
         $project->setDarkAccent($palette[3]);
         $project->setDarkShades($palette[4]);
+
+        $this->projectRepository->save($project);
+    }
+
+    /**
+     * Change motive.
+     */
+    public function changeMotive(Project $project): void
+    {
+        $light = $project->getLightShades();
+        $dark = $project->getDarkShades();
+
+        $project->setDarkShades($light);
+        $project->setlightShades($dark);
 
         $this->projectRepository->save($project);
     }
@@ -231,6 +247,8 @@ class ProjectService
 
         return $array;
     }
+
+
 
     public function rgbToHex()
     {

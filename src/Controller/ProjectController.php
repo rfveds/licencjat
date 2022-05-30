@@ -51,7 +51,7 @@ class ProjectController extends AbstractController
     {
         $this->projectService = $projectService;
         $this->projectRepository = $projectRepository;
-                // Avoid calling getUser() in the constructor: auth may not
+        // Avoid calling getUser() in the constructor: auth may not
         // be complete yet. Instead, store the entire Security object.
         $this->security = $security;
     }
@@ -341,6 +341,62 @@ class ProjectController extends AbstractController
         $data = [$lightShades, $lightAccent, $baseColor, $darkAccent, $darkShades];
 
         $this->projectService->editColors($project, $data);
+
+        if ($project->getCategory()->getTitle() == 'Produkt') {
+
+            return $this->render(
+                'editor/product.html.twig',
+                ['project' => $project]
+            );
+        }
+        if ($project->getCategory()->getTitle() == 'Firma') {
+
+            return $this->render(
+                'editor/company.html.twig',
+                ['project' => $project]
+            );
+        }
+        if ($project->getCategory()->getTitle() == 'Blog') {
+
+            return $this->render(
+                'editor/blog.html.twig',
+                ['project' => $project]
+            );
+        }
+        if ($project->getCategory()->getTitle() == 'Wiadomości') {
+
+            return $this->render(
+                'editor/news.html.twig',
+                ['project' => $project]
+            );
+        }
+    }
+
+
+
+    /**
+     * Change motive.
+     *
+     * @param \Symfony\Component\HttpFoundation\Request $request HTTP request
+     * @param \App\Entity\Project                       $project Project entity
+     *
+     * @return \Symfony\Component\HttpFoundation\Response HTTP response
+     *
+     * @throws \Doctrine\ORM\ORMException
+     * @throws \Doctrine\ORM\OptimisticLockException
+     *
+     * @Route(
+     *     "/{id}/change_motive",
+     *     requirements={"id": "[1-9]\d*"},
+     *     name="project_colors_change_motive",
+     * )
+     * 
+     */
+    public function changeMotive(Project $project): Response
+    {
+
+        $this->projectService->changeMotive($project);
+
 
         if ($project->getCategory()->getTitle() == 'Produkt') {
 
