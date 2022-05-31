@@ -2,7 +2,7 @@
     height: 100%;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column
 }
 
 .top {
@@ -10,58 +10,55 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center
 }
 
 .bottom {
     width: 100%;
     height: 90%;
-    /* border: 1px solid red; */
     display: flex;
-    flex-direction: row;
+    flex-direction: row
 }
 
 .left {
     width: 70%;
-    height: 100%;
-    /* border: 1px solid blue; */
+    height: 100%
 }
 
 .right {
     width: 30%;
-    height: 100%;
-    /* border-left: 1px solid green; */
+    height: 100%
 }
 
 .right__post {
     display: flex;
-    margin-top: 7%;
+    margin-top: 7%
 }
 
 .right__image {
     margin: 10px;
     height: 7rem;
     width: 30%;
-    background-color: grey;
+    background-color: grey
 }
 
 .right__content {
     width: 60%;
-    margin: 10px;
+    margin: 10px
 }
 
 .right__content p {
     padding-bottom: 4%;
-    font-size: 12px;
+    font-size: 8pt;
     width: 80%;
-    border-bottom: 2px solid;
+    border-bottom: 2px solid
 }
 
 .right__content h4 {
     width: 60%;
-    margin-top: 0.5rem;
-    font-size: 18px;
-    border-bottom: 2px solid;
+    margin-top: .5rem;
+    font-size: 16pt;
+    border-bottom: 2px solid
 }
 
 .left {
@@ -71,22 +68,21 @@
     align-items: flex-start;
     margin-left: 2%;
     gap: 8%;
-    padding-top: 5%;
+    padding-top: 5%
 }
 
 .left__post {
     width: 100%;
     height: 50%;
-    /* border: 1px solid red; */
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-around
 }
 
 .left__post--image {
     height: 19rem;
     width: 19rem;
-    background-color: gray;
+    background-color: gray
 }
 
 .left__post--content {
@@ -94,12 +90,17 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: center
 }
 
 .left__post--content p {
+    font-size: 12pt;
     padding-top: 2%;
-    border-top: 1px solid;
+    border-top: 1px solid
+}
+
+.left__post--content h3 {
+    font-size: 20pt;
 }
 
 .top__button {
@@ -108,24 +109,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 5%;
-
+    margin-right: 5%
 }
 
 .top__button-inactive {
-    border-bottom: 2px solid;
+    border-bottom: 2px solid
 }
 
 .top__button p {
     margin: 0;
-    font-size: 16px;
+    font-size: 12pt
 }
 
 .square {
     width: 5rem;
     height: 5rem;
     z-index: 3;
-    margin-top: 2%;
+    margin-top: 2%
 }
 
 .circle {
@@ -134,19 +134,16 @@
     height: 4rem;
     shape-outside: circle();
     clip-path: circle();
-    z-index: 1;
+    z-index: 1
 }
 
 .triangle {
-    /* position: absolute;
-    top: 10%;
-    left: 15%; */
     margin-top: auto;
     width: 0;
     height: 0;
     border-left: 1rem solid transparent;
     border-right: 1rem solid transparent;
-    border-bottom: 2rem solid;
+    border-bottom: 2rem solid
 }
 
 .graphic-element {
@@ -157,5 +154,5 @@
     margin-top: 2%;
     display: flex;
     width: 20%;
-    gap: 3%;
+    gap: 3%
 }
