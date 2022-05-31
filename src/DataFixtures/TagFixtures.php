@@ -57,6 +57,7 @@ class TagFixtures extends AbstractBaseFixtures
                     'reference' => 'red'
                 ],
 
+                
                 [
                     'name' => 'szczęście',
                     'reference' => 'yellow'
